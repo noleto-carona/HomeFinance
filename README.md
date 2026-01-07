@@ -6,7 +6,7 @@ Este é um aplicativo web simples e responsivo para controle financeiro, criado 
 
 Como seu ambiente não possui Node.js ou Python configurados, fiz uma versão que **não requer instalação**.
 
-1. Navegue até a pasta `c:\Users\nolet\HomeFinance` no seu Explorador de Arquivos.
+1. Navegue até a pasta `c:\Users\nolet\HomeFinance\HomeFinance` no seu Explorador de Arquivos.
 2. Dê um clique duplo no arquivo **`index.html`**.
 3. O aplicativo abrirá no seu navegador padrão (Chrome, Edge, etc.).
 
