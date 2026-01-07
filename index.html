@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0ea5e9">
+    <link rel="icon" type="image/svg+xml" sizes="192x192" href="icons/icon-192.svg">
+    <link rel="icon" type="image/svg+xml" sizes="512x512" href="icons/icon-512.svg">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navegação Inferior (Abas) -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-tab="expenses">
+                <i class="fas fa-list"></i>
+                <span>Lançamentos</span>
+            </button>
+            <button class="nav-item" data-tab="dashboard">
+                <i class="fas fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </button>
+            <button class="nav-item" data-tab="settings">
+                <i class="fas fa-cog"></i>
+                <span>Ajustes</span>
+            </button>
+            <button class="nav-item" id="add-btn">
+                <i class="fas fa-plus"></i>
+                <span>Adicionar</span>
+            </button>
+        </nav>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-top">
+                <button id="prev-month" class="icon-btn"><i class="fas fa-chevron-left"></i></button>
+                <h1 id="current-month-display">Janeiro 2026</h1>
+                <button id="next-month" class="icon-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <!-- Cards de Resumo -->
+            <div class="summary-cards">
+                <div class="summary-top-row">
+                    <div class="card card-balance">
+                        <span class="card-label">Saldo Previsto</span>
+                        <span class="card-value value-positive" id="current-balance">R$ 0,00</span>
+                    </div>
+                    <div class="card card-balance">
+                        <span class="card-label">Prejuízo Acumulado</span>
+                        <span class="card-value value-negative" id="cumulative-deficit">R$ 0,00</span>
+                    </div>
+                </div>
+                <div class="summary-row">
+                    <div class="card card-small">
+                        <span class="card-label">Meta</span>
+                        <span class="card-value" id="monthly-goal">R$ 6.000,00</span>
+                    </div>
+                    <div class="card card-small">
+                        <span class="card-label">Total Pendente</span>
+                        <span class="card-value value-negative" id="total-pending">R$ 0,00</span>
+                    </div>
+                    <div class="card card-small">
+                        <span class="card-label">Total Despesas</span>
+                        <span class="card-value value-negative" id="total-expenses">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- View: Lançamentos -->
+        <main id="view-expenses" class="content active-view">
+            <div class="list-header">
+                <h2>Despesas</h2>
+                <div class="filter-group">
+                    <button id="lock-month-btn" class="icon-btn lock-btn" title="Bloquear edição deste mês">
+                        <i class="fas fa-lock-open"></i>
+                    </button>
+                    <button id="copy-prev-month-btn" class="text-btn hidden">
+                        <i class="fas fa-copy"></i> Copiar mês anterior
+                    </button>
+                </div>
+            </div>
+
+            <ul id="expense-list" class="expense-list">
+                <!-- Itens serão inseridos via JS -->
+            </ul>
+            
+            <div id="empty-state" class="empty-state hidden">
+                <p>Nenhuma despesa neste mês.</p>
+            </div>
+        </main>
+
+        <!-- View: Dashboard -->
+        <main id="view-dashboard" class="content">
+            <div class="dashboard-header">
+                <div class="scope-selector">
+                    <button class="scope-btn active" data-scope="monthly">Mensal</button>
+                    <button class="scope-btn" data-scope="annual">Anual</button>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <h3 id="dashboard-chart-title">Gastos por Categoria</h3>
+                <div id="category-chart" class="category-list">
+                    <!-- Barras de categoria via JS -->
+                </div>
+            </div>
+
+            <div class="dashboard-total-section">
+                <span>Total:</span>
+                <span id="dashboard-total-value">R$ 0,00</span>
+            </div>
+            <div class="dashboard-total-section">
+                <span>Déficit:</span>
+                <span id="dashboard-deficit-value">R$ 0,00</span>
+            </div>
+            <div class="dashboard-section">
+                <h3>Tendência de Prejuízo</h3>
+                <div id="deficit-trend" class="trend-chart"></div>
+            </div>
+        </main>
+
+        <!-- View: Settings -->
+        <main id="view-settings" class="content">
+            <div class="accordion-section">
+                <button class="accordion-header accordion-toggle" data-target="accordion-categories">
+                    <span>Gerenciar Categorias</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content" id="accordion-categories">
+                    <div class="dashboard-section">
+                        <div class="list-header">
+                            <h3>Gerenciar Categorias</h3>
+                            <button id="add-category-btn" class="text-btn">
+                                <i class="fas fa-plus"></i> Nova
+                            </button>
+                        </div>
+                        <ul id="settings-category-list" class="settings-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-section">
+                <button class="accordion-header accordion-toggle" data-target="accordion-month">
+                    <span>Metas e Receitas do Mês</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content collapsed" id="accordion-month">
+                    <div class="dashboard-section">
+                        <h3>Receitas e Meta do Mês</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="monthly-goal-input">Meta de Gastos</label>
+                                <input type="number" id="monthly-goal-input" step="0.01" placeholder="0,00">
+                            </div>
+                            <div class="form-group">
+                                <label for="salary-input">Salário</label>
+                                <input type="number" id="salary-input" step="0.01" placeholder="0,00">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="other-income-input">Outras Receitas</label>
+                                <input type="number" id="other-income-input" step="0.01" placeholder="0,00">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-reimburse-input">Devoluções de Cartão</label>
+                                <input type="number" id="card-reimburse-input" step="0.01" placeholder="0,00">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="loan-return-input">Devoluções de Empréstimos</label>
+                                <input type="number" id="loan-return-input" step="0.01" placeholder="0,00">
+                            </div>
+                        </div>
+                        <button id="save-month-settings-btn" class="submit-btn">Salvar Configurações do Mês</button>
+                        <button id="reset-data-btn" class="delete-btn" style="margin-top: 0;">
+                            Restaurar Padrão de Fábrica
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Removido: Botão Flutuante de Adicionar (agora na barra inferior) -->
+
+        <!-- Modal de Adicionar/Editar -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title">Nova Despesa</h3>
+                    <button class="close-btn" id="close-modal">&times;</button>
+                </div>
+                <form id="expense-form">
+                    <input type="hidden" id="expense-id">
+                    
+                    <div class="form-group">
+                        <label for="description">Descrição</label>
+                        <input type="text" id="description" required placeholder="Ex: Aluguel">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="amount">Valor (R$)</label>
+                            <input type="number" id="amount" step="0.01" required placeholder="0,00">
+                        </div>
+                        <div class="form-group">
+                            <label for="due-day">Vencimento (Dia)</label>
+                            <input type="number" id="due-day" min="1" max="31" required placeholder="10">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Categoria</label>
+                        <select id="category" required>
+                            <option value="Moradia">Moradia</option>
+                            <option value="Cartão de Crédito">Cartão de Crédito</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Serviços">Serviços</option>
+                            <option value="Lazer">Lazer</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="switch">
+                            <input type="checkbox" id="is-paid">
+                            <span class="slider round"></span>
+                        </label>
+                        <span>Marcar como Pago</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Salvar</button>
+                    <button type="button" class="delete-btn hidden" id="delete-btn">Excluir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
