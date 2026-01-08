@@ -49,3 +49,7 @@
 ## Dicas
 - Se quiser suporte total a iOS para ícones, use PNG 180x180 (`apple-touch-icon`).
 - Para cache de dados, considerar IndexedDB no futuro.
+- 
+## Colaboradores
+- NoletoChaves
+- Noletinho
