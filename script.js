@@ -640,7 +640,8 @@ function setupEventListeners() {
     });
     closeBtn.addEventListener('click', closeModal);
 
-    deleteBtn.addEventListener('click', (e) => {
+    // Listener do Botão Excluir (Com proteção contra erros e duplicidade)
+    deleteBtn.onclick = (e) => { // Usando onclick para garantir apenas um handler
         e.preventDefault();
         e.stopPropagation();
 
@@ -658,7 +659,7 @@ function setupEventListeners() {
                 closeModal();
             }
         }
-    });
+    };
 
     currentMonthDisplay.setAttribute('title', 'Voltar para o mês atual');
     currentMonthDisplay.setAttribute('tabindex', '0');
@@ -693,7 +694,7 @@ function setupEventListeners() {
     // Settings
     addCategoryBtn.addEventListener('click', addCategory);
     resetBtn.addEventListener('click', () => {
-        if (confirm('ATENÇÃO: Isso apagará TODOS os seus dados e voltará para o estado inicial. Continuar?')) {
+        if (confirm('ATENÇÃO: Isso apagará TODOS os seus dados locais. Continuar?')) {
             localStorage.clear();
             location.reload();
         }
@@ -711,6 +712,7 @@ function setupEventListeners() {
             };
             saveMonthlySettings();
             render();
+            alert('Configurações do mês salvas!');
         });
     }
 
@@ -719,7 +721,7 @@ function setupEventListeners() {
         el.addEventListener('blur', () => {
             const v = String(el.value || '0').replace(',', '.');
             const num = parseFloat(v);
-            el.value = isNaN(num) ? '0.00' : num.toFixed(2);
+            el.value = isNaN(num) ? '0.00' : num.toFixed(2).replace('.', ',');
         });
     });
 
@@ -735,12 +737,16 @@ function setupEventListeners() {
 
     const accordionToggles = document.querySelectorAll('.accordion-toggle');
     accordionToggles.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetId = btn.dataset.target;
+        // Remover listeners antigos para evitar duplicação em caso de re-init (raro, mas seguro)
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+
+        newBtn.addEventListener('click', () => {
+            const targetId = newBtn.dataset.target;
             const content = document.getElementById(targetId);
             if (!content) return;
             const nowHidden = content.classList.toggle('hidden');
-            const icon = btn.querySelector('i');
+            const icon = newBtn.querySelector('i');
             if (icon) {
                 icon.classList.toggle('fa-chevron-down', nowHidden);
                 icon.classList.toggle('fa-chevron-up', !nowHidden);
@@ -771,9 +777,29 @@ function setupEventListeners() {
     const btnUploadGithub = document.getElementById('github-sync-upload-btn');
     const btnDownloadGithub = document.getElementById('github-sync-download-btn');
 
-    if (btnSaveGithubConfig) btnSaveGithubConfig.addEventListener('click', saveGithubConfig);
-    if (btnUploadGithub) btnUploadGithub.addEventListener('click', uploadToGithub);
-    if (btnDownloadGithub) btnDownloadGithub.addEventListener('click', downloadFromGithub);
+    if (btnSaveGithubConfig) btnSaveGithubConfig.onclick = saveGithubConfig; // Usar onclick para limpar anteriores
+
+    if (btnUploadGithub) {
+        btnUploadGithub.onclick = () => {
+            // Atualizar globais antes de chamar a função
+            const t = document.getElementById('github-token').value.trim();
+            const r = document.getElementById('github-repo').value.trim();
+            if (t) githubToken = t;
+            if (r) githubRepo = r;
+            uploadToGithub();
+        };
+    }
+
+    if (btnDownloadGithub) {
+        btnDownloadGithub.onclick = () => {
+            // Atualizar globais antes de chamar a função
+            const t = document.getElementById('github-token').value.trim();
+            const r = document.getElementById('github-repo').value.trim();
+            if (t) githubToken = t;
+            if (r) githubRepo = r;
+            downloadFromGithub();
+        };
+    }
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -807,16 +833,6 @@ function setupEventListeners() {
 
         saveData();
         closeModal();
-    });
-
-    deleteBtn.addEventListener('click', () => {
-        if (isCurrentMonthLocked()) return;
-        const id = document.getElementById('expense-id').value;
-        if (confirm('Tem certeza que deseja excluir?')) {
-            expenses = expenses.filter(e => e.id != id);
-            saveData();
-            closeModal();
-        }
     });
 }
 
