@@ -118,15 +118,6 @@
       "monthKey": "2026-0"
     },
     {
-      "id": 15,
-      "description": "IR DE RENDA",
-      "day": 12,
-      "amount": 368.12,
-      "paid": true,
-      "category": "Serviços",
-      "monthKey": "2026-0"
-    },
-    {
       "id": 16,
       "description": "Cartório piso",
       "day": 30,
@@ -143,6 +134,159 @@
       "paid": true,
       "category": "Moradia",
       "monthKey": "2026-0"
+    },
+    {
+      "id": 1769617617757.9822,
+      "description": "Aluguel",
+      "day": 10,
+      "amount": 1100,
+      "paid": false,
+      "category": "Moradia",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.92,
+      "description": "CARTÃO NU BANCK",
+      "day": 7,
+      "amount": 1679.65,
+      "paid": false,
+      "category": "Cartão de Crédito",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.1035,
+      "description": "CARTÃO CAIXA",
+      "day": 11,
+      "amount": 651.47,
+      "paid": false,
+      "category": "Cartão de Crédito",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.206,
+      "description": "BOLETO ITAÚ",
+      "day": 15,
+      "amount": 554,
+      "paid": false,
+      "category": "Serviços",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.3738,
+      "description": "Claro / AUT",
+      "day": 12,
+      "amount": 134.16,
+      "paid": false,
+      "category": "Serviços",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.7163,
+      "description": "Seguro / DEB.AUTO",
+      "day": 13,
+      "amount": 47,
+      "paid": false,
+      "category": "Transporte",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.3862,
+      "description": "CARTÃO CAIXA",
+      "day": 10,
+      "amount": 56,
+      "paid": false,
+      "category": "Cartão de Crédito",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.11,
+      "description": "CARTÃO CS BANK",
+      "day": 10,
+      "amount": 2386.03,
+      "paid": false,
+      "category": "Cartão de Crédito",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.6582,
+      "description": "Água / DEB.AUTO",
+      "day": 7,
+      "amount": 201.34,
+      "paid": false,
+      "category": "Moradia",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.3372,
+      "description": "Energia / DEB.AUTO",
+      "day": 10,
+      "amount": 404.28,
+      "paid": false,
+      "category": "Moradia",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.893,
+      "description": "Manu.Caixa",
+      "day": 12,
+      "amount": 16,
+      "paid": false,
+      "category": "Serviços",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.7312,
+      "description": "IPVA 1/5",
+      "day": 8,
+      "amount": 106.1,
+      "paid": false,
+      "category": "Transporte",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617617757.3342,
+      "description": "Internet",
+      "day": 16,
+      "amount": 100,
+      "paid": false,
+      "category": "Moradia",
+      "monthKey": "2026-1"
+    },
+    {
+      "id": 1769617755520,
+      "monthKey": "2026-1",
+      "description": "KIT AMORTECEDORES",
+      "amount": 458,
+      "day": 20,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1769617772435,
+      "monthKey": "2026-1",
+      "description": "EMBREAGEM LUK",
+      "amount": 329,
+      "day": 20,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1769617790863,
+      "monthKey": "2026-1",
+      "description": "AUTO ELETRICA",
+      "amount": 430,
+      "day": 27,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1769617818219,
+      "monthKey": "2026-1",
+      "description": "SERVISO MECANICA",
+      "amount": 1580,
+      "day": 24,
+      "category": "Transporte",
+      "paid": true
     }
   ],
   "categories": [
@@ -157,5 +301,5 @@
   ],
   "monthlySettings": {},
   "monthLocks": {},
-  "backupDate": "2026-01-28T04:41:57.073Z"
+  "backupDate": "2026-01-28T16:31:11.615Z"
 }
