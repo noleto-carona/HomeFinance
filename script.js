@@ -658,6 +658,23 @@ function setupEventListeners() {
     });
     closeBtn.addEventListener('click', closeModal);
 
+    deleteBtn.addEventListener('click', () => {
+        if (isCurrentMonthLocked()) return;
+
+        const id = document.getElementById('expense-id').value;
+        if (!id) return;
+
+        if (confirm('Tem certeza que deseja excluir esta despesa?')) {
+            const index = expenses.findIndex(e => e.id == id);
+            if (index !== -1) {
+                expenses.splice(index, 1);
+                saveData();
+                render();
+                closeModal();
+            }
+        }
+    });
+
     currentMonthDisplay.setAttribute('title', 'Voltar para o mês atual');
     currentMonthDisplay.setAttribute('tabindex', '0');
     currentMonthDisplay.addEventListener('click', () => {
