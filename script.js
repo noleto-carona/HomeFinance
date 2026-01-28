@@ -658,7 +658,10 @@ function setupEventListeners() {
     });
     closeBtn.addEventListener('click', closeModal);
 
-    deleteBtn.addEventListener('click', () => {
+    deleteBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
         if (isCurrentMonthLocked()) return;
 
         const id = document.getElementById('expense-id').value;
