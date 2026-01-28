@@ -640,10 +640,9 @@ function setupEventListeners() {
     });
     closeBtn.addEventListener('click', closeModal);
 
-    // Listener do Botão Excluir (Com proteção contra erros e duplicidade)
-    deleteBtn.onclick = (e) => { // Usando onclick para garantir apenas um handler
-        e.preventDefault();
-        e.stopPropagation();
+    // Listener do Botão Excluir (Simplificado e Robusto)
+    deleteBtn.onclick = () => { // Sem necessidade de 'e'
+        // (preventDefault removido pois type="button" fora do form já é seguro)
 
         if (isCurrentMonthLocked()) return;
 
