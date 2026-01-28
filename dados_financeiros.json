@@ -1,0 +1,170 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "description": "Aluguel",
+      "day": 10,
+      "amount": 1100,
+      "paid": true,
+      "category": "Moradia",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 2,
+      "description": "CARTÃO CREDI FATO",
+      "day": 10,
+      "amount": 1489.04,
+      "paid": true,
+      "category": "Cartão de Crédito",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 3,
+      "description": "CARTÃO NU BANCK",
+      "day": 7,
+      "amount": 2827.32,
+      "paid": true,
+      "category": "Cartão de Crédito",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 4,
+      "description": "CARTÃO CAIXA",
+      "day": 11,
+      "amount": 2159.24,
+      "paid": true,
+      "category": "Cartão de Crédito",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 5,
+      "description": "BOLETO ITAÚ",
+      "day": 15,
+      "amount": 554,
+      "paid": false,
+      "category": "Serviços",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 6,
+      "description": "Claro / AUT",
+      "day": 12,
+      "amount": 134.16,
+      "paid": false,
+      "category": "Serviços",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 7,
+      "description": "Seguro / DEB.AUTO",
+      "day": 13,
+      "amount": 47,
+      "paid": false,
+      "category": "Transporte",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 8,
+      "description": "CARTÃO CAIXA",
+      "day": 10,
+      "amount": 56.83,
+      "paid": false,
+      "category": "Cartão de Crédito",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 9,
+      "description": "CARTÃO CS BANK",
+      "day": 10,
+      "amount": 35,
+      "paid": false,
+      "category": "Cartão de Crédito",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 10,
+      "description": "Pontos ÁTOMOS",
+      "day": 25,
+      "amount": 12,
+      "paid": false,
+      "category": "Outros",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 11,
+      "description": "Água / DEB.AUTO",
+      "day": 7,
+      "amount": 126.96,
+      "paid": false,
+      "category": "Moradia",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 12,
+      "description": "Energia / DEB.AUTO",
+      "day": 10,
+      "amount": 204.28,
+      "paid": false,
+      "category": "Moradia",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 13,
+      "description": "Manu.Caixa",
+      "day": 12,
+      "amount": 16,
+      "paid": false,
+      "category": "Serviços",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 14,
+      "description": "IPVA 1/5",
+      "day": 8,
+      "amount": 106.1,
+      "paid": false,
+      "category": "Transporte",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 15,
+      "description": "IR DE RENDA",
+      "day": 12,
+      "amount": 368.12,
+      "paid": true,
+      "category": "Serviços",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 16,
+      "description": "Cartório piso",
+      "day": 30,
+      "amount": 365,
+      "paid": true,
+      "category": "Outros",
+      "monthKey": "2026-0"
+    },
+    {
+      "id": 17,
+      "description": "Internet",
+      "day": 16,
+      "amount": 100,
+      "paid": true,
+      "category": "Moradia",
+      "monthKey": "2026-0"
+    }
+  ],
+  "categories": [
+    "Moradia",
+    "Cartão de Crédito",
+    "Transporte",
+    "Serviços",
+    "Lazer",
+    "Outros",
+    "Alimentação",
+    "Saúde"
+  ],
+  "monthlySettings": {},
+  "monthLocks": {},
+  "backupDate": "2026-01-28T03:22:05.782Z"
+}
