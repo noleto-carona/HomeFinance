@@ -1034,7 +1034,12 @@ function showGithubStatus(msg, type) {
 // Start
 init();
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js');
+    // REMOVENDO Service Workers antigos para garantir atualização do cache
+    navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        for (let registration of registrations) {
+            registration.unregister().then(() => {
+                console.log('Service Worker desregistrado para limpar cache.');
+            });
+        }
     });
 }
