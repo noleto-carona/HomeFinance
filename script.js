@@ -117,7 +117,7 @@ function computeYearlyDeficit(year) {
 
 function renderDeficitTrend(year) {
     if (!deficitTrendEl) return;
-    const months = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+    const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
     const values = [];
     for (let m = 0; m < 12; m++) {
         const key = `${year}-${m}`;
@@ -164,7 +164,7 @@ function loadData() {
     const savedSettings = localStorage.getItem('monthlySettings');
     const savedAccordion = localStorage.getItem('accordionState');
     const savedLocks = localStorage.getItem('monthLocks');
-    
+
     // Carregar Categorias
     if (savedCategories) {
         categories = JSON.parse(savedCategories);
@@ -179,7 +179,7 @@ function loadData() {
         monthlySettings = {};
         saveMonthlySettings();
     }
-    
+
     if (savedAccordion) {
         try {
             accordionState = JSON.parse(savedAccordion) || {};
@@ -205,7 +205,7 @@ function loadData() {
     // Carregar Despesas
     if (savedExpenses) {
         let rawData = JSON.parse(savedExpenses);
-        
+
         // Migração simples
         if (rawData.length > 0 && !rawData[0].monthKey) {
             expenses = rawData.map(e => ({
@@ -257,13 +257,13 @@ function render() {
     renderDashboard(currentExpenses);
     renderSettings();
     applyAccordionState();
-    
+
     // Botão copiar mês anterior
     const prevDate = new Date(currentDate);
     prevDate.setMonth(prevDate.getMonth() - 1);
     const prevKey = getMonthKey(prevDate);
     const hasPrevData = expenses.some(e => e.monthKey === prevKey);
-    
+
     if (currentExpenses.length === 0 && hasPrevData) {
         copyPrevMonthBtn.classList.remove('hidden');
         emptyStateEl.classList.add('hidden');
@@ -292,7 +292,7 @@ function applyAccordionState() {
 
 function renderExpenses(list) {
     expenseListEl.innerHTML = '';
-    
+
     if (list.length === 0) return;
 
     emptyStateEl.classList.add('hidden');
@@ -354,7 +354,7 @@ function renderSummary(list) {
 
 function renderDashboard(monthlyList) {
     let listToRender = monthlyList;
-    
+
     if (dashboardScope === 'annual') {
         const year = currentDate.getFullYear();
         listToRender = expenses.filter(e => {
@@ -378,7 +378,7 @@ function renderDashboard(monthlyList) {
     });
 
     dashboardTotalValueEl.textContent = formatCurrency(total);
-    
+
     if (dashboardDeficitValueEl) {
         let deficit = 0;
         if (dashboardScope === 'annual') {
@@ -392,14 +392,14 @@ function renderDashboard(monthlyList) {
         dashboardDeficitValueEl.textContent = deficit > 0 ? formatCurrency(-deficit) : formatCurrency(0);
         dashboardDeficitValueEl.className = `card-value ${deficit > 0 ? 'value-negative' : 'value-positive'}`;
     }
-    
+
     renderDeficitTrend(currentDate.getFullYear());
 
     const sortedCats = Object.entries(categoriesSum)
-        .sort(([,a], [,b]) => b - a);
+        .sort(([, a], [, b]) => b - a);
 
     categoryChartEl.innerHTML = '';
-    
+
     if (sortedCats.length === 0) {
         categoryChartEl.innerHTML = '<p class="empty-state">Sem dados para exibir.</p>';
         return;
@@ -408,7 +408,7 @@ function renderDashboard(monthlyList) {
     sortedCats.forEach(([name, value], idx) => {
         const percentage = total > 0 ? (value / total) * 100 : 0;
         const gradClass = (idx % 3 === 1) ? 'secondary' : (idx % 3 === 2) ? 'tertiary' : 'primary';
-        
+
         const div = document.createElement('div');
         div.className = 'category-row';
         div.innerHTML = `
@@ -429,7 +429,7 @@ function renderDashboard(monthlyList) {
 
 function renderSettings() {
     settingsCategoryListEl.innerHTML = '';
-    
+
     categories.forEach((cat, index) => {
         const li = document.createElement('li');
         li.className = 'settings-item';
@@ -481,14 +481,14 @@ function addCategory() {
 function editCategory(index) {
     const oldName = categories[index];
     const newName = prompt("Editar nome da categoria:", oldName);
-    
+
     if (newName && newName.trim() && newName !== oldName) {
         if (categories.includes(newName.trim())) {
             alert("Categoria já existe!");
             return;
         }
         categories[index] = newName.trim();
-        
+
         // Atualizar despesas que usavam o nome antigo
         // Opcional: Perguntar se quer atualizar. Aqui faremos automático.
         expenses = expenses.map(e => {
@@ -497,7 +497,7 @@ function editCategory(index) {
             }
             return e;
         });
-        
+
         saveCategories(); // Salva categorias e renderiza lista
         saveData(); // Salva despesas atualizadas
     }
@@ -539,7 +539,7 @@ function copyPreviousMonth() {
     const currentKey = getMonthKey(currentDate);
 
     const prevExpenses = expenses.filter(e => e.monthKey === prevKey);
-    
+
     const newExpenses = prevExpenses.map(e => ({
         ...e,
         id: Date.now() + Math.random(),
@@ -555,13 +555,13 @@ function copyPreviousMonth() {
 function updateCategorySelect(selectedCategory = null) {
     const select = document.getElementById('category');
     select.innerHTML = '';
-    
+
     // Se a categoria da despesa não estiver na lista (foi excluída?), adiciona temporariamente
     let listToRender = [...categories];
     if (selectedCategory && !listToRender.includes(selectedCategory)) {
         listToRender.push(selectedCategory);
     }
-    
+
     listToRender.sort().forEach(cat => {
         const option = document.createElement('option');
         option.value = cat;
@@ -574,25 +574,26 @@ function updateCategorySelect(selectedCategory = null) {
 function openModal(expense = null) {
     if (isCurrentMonthLocked()) return;
     modal.classList.remove('hidden');
-    
+
     if (expense) {
         document.getElementById('modal-title').textContent = 'Editar Despesa';
         document.getElementById('expense-id').value = expense.id;
         document.getElementById('description').value = expense.description;
-        document.getElementById('amount').value = expense.amount;
+        document.getElementById('amount').value = expense.amount.toFixed(2).replace('.', ',');
         document.getElementById('due-day').value = expense.day;
         document.getElementById('is-paid').checked = expense.paid;
-        
+
         updateCategorySelect(expense.category);
-        
+
         deleteBtn.classList.remove('hidden');
     } else {
         document.getElementById('modal-title').textContent = 'Nova Despesa';
         form.reset();
         document.getElementById('expense-id').value = '';
-        
+        document.getElementById('amount').value = '';
+
         updateCategorySelect(categories[0] || 'Outros');
-        
+
         deleteBtn.classList.add('hidden');
     }
 }
@@ -606,7 +607,7 @@ function closeModal() {
 function setupEventListeners() {
     prevMonthBtn.addEventListener('click', () => changeMonth(-1));
     nextMonthBtn.addEventListener('click', () => changeMonth(1));
-    
+
     copyPrevMonthBtn.addEventListener('click', copyPreviousMonth);
 
     addBtn.addEventListener('click', () => {
@@ -614,7 +615,7 @@ function setupEventListeners() {
         openModal();
     });
     closeBtn.addEventListener('click', closeModal);
-    
+
     currentMonthDisplay.setAttribute('title', 'Voltar para o mês atual');
     currentMonthDisplay.setAttribute('tabindex', '0');
     currentMonthDisplay.addEventListener('click', () => {
@@ -630,7 +631,7 @@ function setupEventListeners() {
             render();
         }
     });
-    
+
     if (lockMonthBtn) {
         lockMonthBtn.addEventListener('click', () => {
             const key = getMonthKey(currentDate);
@@ -640,7 +641,7 @@ function setupEventListeners() {
             refreshLockUI();
         });
     }
-    
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
     });
@@ -715,7 +716,7 @@ function setupEventListeners() {
             views.forEach(v => v.classList.remove('active-view'));
             const view = document.getElementById(`view-${tabId}`);
             if (view) view.classList.add('active-view');
-            
+
             // Botão Adicionar permanece visível em todas as abas
             addBtn.style.display = 'flex';
         });
@@ -724,7 +725,7 @@ function setupEventListeners() {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (isCurrentMonthLocked()) return;
-        
+
         const id = document.getElementById('expense-id').value;
         const description = document.getElementById('description').value;
         const amount = parseFloat(document.getElementById('amount').value);
