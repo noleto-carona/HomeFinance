@@ -1,23 +1,5 @@
 // Mock Data inicial
-const INITIAL_DATA_RAW = [
-    { id: 1, description: "Aluguel", day: 10, amount: 1100.00, paid: true, category: "Moradia" },
-    { id: 2, description: "CARTÃO CREDI FATO", day: 10, amount: 1489.04, paid: true, category: "Cartão de Crédito" },
-    { id: 3, description: "CARTÃO NU BANCK", day: 7, amount: 2827.32, paid: true, category: "Cartão de Crédito" },
-    { id: 4, description: "CARTÃO CAIXA", day: 11, amount: 2159.24, paid: true, category: "Cartão de Crédito" },
-    { id: 5, description: "BOLETO ITAÚ", day: 15, amount: 554.00, paid: false, category: "Serviços" },
-    { id: 6, description: "Claro / AUT", day: 12, amount: 134.16, paid: false, category: "Serviços" },
-    { id: 7, description: "Seguro / DEB.AUTO", day: 13, amount: 47.00, paid: false, category: "Transporte" },
-    { id: 8, description: "CARTÃO CAIXA", day: 10, amount: 56.83, paid: false, category: "Cartão de Crédito" },
-    { id: 9, description: "CARTÃO CS BANK", day: 10, amount: 35.00, paid: false, category: "Cartão de Crédito" },
-    { id: 10, description: "Pontos ÁTOMOS", day: 25, amount: 12.00, paid: false, category: "Outros" },
-    { id: 11, description: "Água / DEB.AUTO", day: 7, amount: 126.96, paid: false, category: "Moradia" },
-    { id: 12, description: "Energia / DEB.AUTO", day: 10, amount: 204.28, paid: false, category: "Moradia" },
-    { id: 13, description: "Manu.Caixa", day: 12, amount: 16.00, paid: false, category: "Serviços" },
-    { id: 14, description: "IPVA 1/5", day: 8, amount: 106.10, paid: false, category: "Transporte" },
-    { id: 15, description: "IR DE RENDA", day: 12, amount: 368.12, paid: true, category: "Serviços" },
-    { id: 16, description: "Cartório piso", day: 30, amount: 365.00, paid: true, category: "Outros" },
-    { id: 17, description: "Internet", day: 16, amount: 100.00, paid: true, category: "Moradia" }
-];
+const INITIAL_DATA_RAW = [];
 
 const DEFAULT_CATEGORIES = [
     "Moradia", "Cartão de Crédito", "Transporte", "Serviços", "Lazer", "Outros", "Alimentação", "Saúde"
@@ -799,7 +781,7 @@ function setupEventListeners() {
 
         const id = document.getElementById('expense-id').value;
         const description = document.getElementById('description').value;
-        const amount = parseFloat(document.getElementById('amount').value);
+        const amount = parseFloat(document.getElementById('amount').value.replace(',', '.'));
         const day = parseInt(document.getElementById('due-day').value);
         const category = document.getElementById('category').value;
         const paid = document.getElementById('is-paid').checked;
