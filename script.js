@@ -33,6 +33,8 @@ let dashboardScope = 'monthly'; // 'monthly' or 'annual'
 let monthlySettings = {};
 let accordionState = {};
 let monthLocks = {};
+let githubToken = '';
+let githubRepo = '';
 
 // Elementos DOM
 const expenseListEl = document.getElementById('expense-list');
@@ -201,6 +203,46 @@ function loadData() {
         monthLocks = {};
         localStorage.setItem('monthLocks', JSON.stringify(monthLocks));
     }
+
+    // Carregar Config GitHub
+    githubToken = localStorage.getItem('githubToken') || '';
+    githubRepo = localStorage.getItem('githubRepo') || '';
+
+    // Tentar carregar do .env se não estiver no localStorage
+    if (!githubToken || !githubRepo) {
+        fetch('.env')
+            .then(response => {
+                if (response.ok) return response.text();
+                return null;
+            })
+            .then(text => {
+                if (text) {
+                    const lines = text.split('\n');
+                    lines.forEach(line => {
+                        const [key, value] = line.split('=');
+                        if (key && value) {
+                            const cleanValue = value.trim();
+                            if (key.trim() === 'GITHUB_TOKEN' && !githubToken) {
+                                githubToken = cleanValue;
+                                // Salvar no localStorage para persistência futura
+                                localStorage.setItem('githubToken', cleanValue);
+                            }
+                            if (key.trim() === 'GITHUB_REPO' && !githubRepo) {
+                                githubRepo = cleanValue;
+                                localStorage.setItem('githubRepo', cleanValue);
+                            }
+                        }
+                    });
+                    // Atualizar UI se carregar
+                    if (document.getElementById('github-token')) document.getElementById('github-token').value = githubToken;
+                    if (document.getElementById('github-repo')) document.getElementById('github-repo').value = githubRepo;
+                }
+            })
+            .catch(console.error);
+    }
+
+    if (document.getElementById('github-token')) document.getElementById('github-token').value = githubToken;
+    if (document.getElementById('github-repo')) document.getElementById('github-repo').value = githubRepo;
 
     // Carregar Despesas
     if (savedExpenses) {
@@ -722,6 +764,15 @@ function setupEventListeners() {
         });
     });
 
+    // GitHub Sync Listeners
+    const btnSaveGithubConfig = document.getElementById('github-save-config-btn');
+    const btnUploadGithub = document.getElementById('github-sync-upload-btn');
+    const btnDownloadGithub = document.getElementById('github-sync-download-btn');
+
+    if (btnSaveGithubConfig) btnSaveGithubConfig.addEventListener('click', saveGithubConfig);
+    if (btnUploadGithub) btnUploadGithub.addEventListener('click', uploadToGithub);
+    if (btnDownloadGithub) btnDownloadGithub.addEventListener('click', downloadFromGithub);
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (isCurrentMonthLocked()) return;
@@ -787,6 +838,176 @@ function refreshLockUI() {
     if (saveMonthSettingsBtn) saveMonthSettingsBtn.disabled = locked;
     if (copyPrevMonthBtn) {
         if (locked) copyPrevMonthBtn.classList.add('hidden');
+    }
+}
+
+// --- GitHub Integration ---
+function saveGithubConfig() {
+    const token = document.getElementById('github-token').value.trim();
+    const repo = document.getElementById('github-repo').value.trim();
+
+    if (!token || !repo) {
+        showGithubStatus('Preencha Token e Repositório!', 'error');
+        return;
+    }
+
+    githubToken = token;
+    githubRepo = repo;
+    localStorage.setItem('githubToken', token);
+    localStorage.setItem('githubRepo', repo);
+    showGithubStatus('Configuração salva com sucesso!', 'success');
+}
+
+async function uploadToGithub() {
+    if (!githubToken || !githubRepo) {
+        showGithubStatus('Configure o Token e Repositório primeiro.', 'error');
+        return;
+    }
+
+    const btn = document.getElementById('github-sync-upload-btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+    btn.disabled = true;
+
+    try {
+        const data = {
+            expenses,
+            categories,
+            monthlySettings,
+            monthLocks,
+            backupDate: new Date().toISOString()
+        };
+
+        // Convert to Base64 (handling UTF-8)
+        const jsonContent = JSON.stringify(data, null, 2);
+        const encoder = new TextEncoder();
+        const dataArray = encoder.encode(jsonContent);
+        let base64Content = '';
+        const len = dataArray.byteLength;
+        for (let i = 0; i < len; i++) {
+            base64Content += String.fromCharCode(dataArray[i]);
+        }
+        base64Content = btoa(base64Content);
+
+        // 1. Get current SHA if file exists
+        const path = `https://api.github.com/repos/${githubRepo}/contents/dados_financeiros.json`;
+        let sha = null;
+
+        try {
+            const checkResponse = await fetch(path, {
+                headers: {
+                    'Authorization': `token ${githubToken}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            });
+            if (checkResponse.ok) {
+                const checkData = await checkResponse.json();
+                sha = checkData.sha;
+            }
+        } catch (e) {
+            console.log('Arquivo ainda não existe ou erro de rede', e);
+        }
+
+        // 2. Upload/Update
+        const body = {
+            message: `Backup HomeFinance: ${new Date().toLocaleString()}`,
+            content: base64Content
+        };
+        if (sha) body.sha = sha;
+
+        const response = await fetch(path, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${githubToken}`,
+                'Content-Type': 'application/json',
+                'Accept': 'application/vnd.github.v3+json'
+            },
+            body: JSON.stringify(body)
+        });
+
+        if (response.ok) {
+            showGithubStatus('Backup enviado com sucesso! ✅', 'success');
+        } else {
+            const err = await response.json();
+            throw new Error(err.message || 'Erro no upload');
+        }
+
+    } catch (error) {
+        showGithubStatus(`Erro: ${error.message}`, 'error');
+    } finally {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }
+}
+
+async function downloadFromGithub() {
+    if (!githubToken || !githubRepo) {
+        showGithubStatus('Configure o Token e Repositório primeiro.', 'error');
+        return;
+    }
+
+    if (!confirm('ATENÇÃO: Isso substituirá seus dados locais pelos do GitHub. Continuar?')) return;
+
+    const btn = document.getElementById('github-sync-download-btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Baixando...';
+    btn.disabled = true;
+
+    try {
+        const path = `https://api.github.com/repos/${githubRepo}/contents/dados_financeiros.json`;
+        const response = await fetch(path, {
+            headers: {
+                'Authorization': `token ${githubToken}`,
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
+
+        if (!response.ok) throw new Error('Arquivo não encontrado ou erro de acesso.');
+
+        const data = await response.json();
+
+        // Decode Base64
+        const binaryString = atob(data.content);
+        const bytes = new Uint8Array(binaryString.length);
+        for (let i = 0; i < binaryString.length; i++) {
+            bytes[i] = binaryString.charCodeAt(i);
+        }
+        const decoder = new TextDecoder('utf-8');
+        const jsonContent = decoder.decode(bytes);
+
+        const parsed = JSON.parse(jsonContent);
+
+        // Validate basic structure
+        if (!parsed.expenses || !parsed.categories) {
+            throw new Error('Formato de arquivo inválido.');
+        }
+
+        // Update Local Storage
+        localStorage.setItem('expenses', JSON.stringify(parsed.expenses));
+        localStorage.setItem('categories', JSON.stringify(parsed.categories));
+        if (parsed.monthlySettings) localStorage.setItem('monthlySettings', JSON.stringify(parsed.monthlySettings));
+        if (parsed.monthLocks) localStorage.setItem('monthLocks', JSON.stringify(parsed.monthLocks));
+
+        showGithubStatus('Dados restaurados! Recarregando...', 'success');
+        setTimeout(() => location.reload(), 1500);
+
+    } catch (error) {
+        showGithubStatus(`Erro: ${error.message}`, 'error');
+    } finally {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }
+}
+
+function showGithubStatus(msg, type) {
+    const el = document.getElementById('github-status');
+    if (el) {
+        el.textContent = msg;
+        el.style.color = type === 'error' ? '#ef4444' : '#10b981';
+        // Clear after 5 seconds
+        if (type !== 'error') {
+            setTimeout(() => el.textContent = '', 5000);
+        }
     }
 }
 
