@@ -76,8 +76,8 @@
       "id": 9,
       "description": "CARTÃO CS BANK",
       "day": 10,
-      "amount": 35,
-      "paid": false,
+      "amount": 305,
+      "paid": true,
       "category": "Cartão de Crédito",
       "monthKey": "2026-0"
     },
@@ -166,5 +166,5 @@
   ],
   "monthlySettings": {},
   "monthLocks": {},
-  "backupDate": "2026-01-28T03:22:28.455Z"
+  "backupDate": "2026-01-28T03:27:30.121Z"
 }
