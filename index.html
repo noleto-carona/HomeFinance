@@ -166,15 +166,35 @@
                         </button>
 
                         <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
-                            <p style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">Transferir Configuração (.env)</p>
-                            <div style="display: flex; gap: 10px;">
-                                <button id="export-env-btn" class="text-btn" style="flex: 1; font-size: 0.8rem;">
-                                    <i class="fas fa-file-export"></i> Exportar
+                            <p style="font-size: 0.9rem; font-weight: 600; color: #333; margin-bottom: 10px;">Gerenciamento de Perfis</p>
+                            
+                            <!-- Login com Senha -->
+                            <div style="background: #f8fafc; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+                                <label style="font-size: 0.8rem; color: #64748b; display: block; margin-bottom: 5px;">Entrar com Senha (Multi-usuário)</label>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="password" id="profile-password-input" placeholder="Sua senha de acesso" style="flex: 1; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                                    <button id="profile-login-btn" class="submit-btn" style="width: auto; margin: 0; padding: 0 15px;">Entrar</button>
+                                </div>
+                                <p style="font-size: 0.75rem; color: #64748b; margin-top: 5px;">Isso carregará seu Token/Repo e baixará seus dados do GitHub.</p>
+                            </div>
+
+                            <!-- Gerar Código -->
+                            <div class="accordion-section" style="margin-bottom: 0;">
+                                <button class="accordion-header accordion-toggle" data-target="accordion-profile-gen" style="background: none; padding: 5px 0; font-size: 0.85rem; color: #0ea5e9;">
+                                    <span>Criar/Gerar Novo Perfil</span>
+                                    <i class="fas fa-chevron-down"></i>
                                 </button>
-                                <button id="import-env-btn-trigger" class="text-btn" style="flex: 1; font-size: 0.8rem;">
-                                    <i class="fas fa-file-import"></i> Importar
-                                </button>
-                                <input type="file" id="import-env-file" accept=".env,.txt" style="display: none;">
+                                <div class="accordion-content hidden" id="accordion-profile-gen">
+                                    <div style="background: #f0f9ff; padding: 10px; border-radius: 8px; margin-top: 5px;">
+                                        <p style="font-size: 0.8rem; margin-bottom: 8px;">1. Preencha Token e Repo acima.<br>2. Defina uma senha abaixo.<br>3. Gere o código e envie para o administrador.</p>
+                                        <input type="password" id="new-profile-password" placeholder="Defina uma senha segura" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                                        <button id="generate-profile-code-btn" class="text-btn" style="width: 100%; text-align: center; border: 1px solid #0ea5e9;">
+                                            <i class="fas fa-code"></i> Gerar Código Criptografado
+                                        </button>
+                                        <textarea id="generated-profile-code" rows="4" readonly style="width: 100%; margin-top: 8px; font-family: monospace; font-size: 0.75rem; display: none;"></textarea>
+                                        <button id="copy-profile-code-btn" class="text-btn" style="width: 100%; margin-top: 5px; display: none;">Copiar Código</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -297,7 +317,8 @@
         </div>
     </div>
 
-    <script src="script.js?v=2.0"></script>
+    <script src="profiles.js"></script>
+    <script src="script.js?v=2.1"></script>
 </body>
 
 </html>

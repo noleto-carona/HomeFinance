@@ -800,24 +800,44 @@ function setupEventListeners() {
         };
     }
 
-    // ENV Import/Export Listeners
-    const btnExportEnv = document.getElementById('export-env-btn');
-    const btnImportEnvTrigger = document.getElementById('import-env-btn-trigger');
-    const fileInputEnv = document.getElementById('import-env-file');
-
-    if (btnExportEnv) {
-        btnExportEnv.onclick = exportEnvConfig;
+    // Profile Management Listeners
+    const btnProfileLogin = document.getElementById('profile-login-btn');
+    const inputProfilePwd = document.getElementById('profile-password-input');
+    
+    if (btnProfileLogin) {
+        btnProfileLogin.addEventListener('click', handleProfileLogin);
+    }
+    if (inputProfilePwd) {
+        inputProfilePwd.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') handleProfileLogin();
+        });
     }
 
-    if (btnImportEnvTrigger && fileInputEnv) {
-        btnImportEnvTrigger.onclick = () => fileInputEnv.click();
-        fileInputEnv.onchange = (e) => {
-            if (e.target.files.length > 0) {
-                importEnvConfig(e.target.files[0]);
-                // Limpar input para permitir re-importar mesmo arquivo se necessário
-                e.target.value = '';
+    const btnGenerateProfile = document.getElementById('generate-profile-code-btn');
+    const inputNewProfilePwd = document.getElementById('new-profile-password');
+
+    if (btnGenerateProfile) {
+        btnGenerateProfile.addEventListener('click', handleGenerateProfileCode);
+    }
+    if (inputNewProfilePwd) {
+        inputNewProfilePwd.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') handleGenerateProfileCode();
+        });
+    }
+
+    const btnCopyProfileCode = document.getElementById('copy-profile-code-btn');
+    if (btnCopyProfileCode) {
+        btnCopyProfileCode.addEventListener('click', () => {
+            const codeArea = document.getElementById('generated-profile-code');
+            if (codeArea && codeArea.value) {
+                codeArea.select();
+                document.execCommand('copy');
+                
+                const originalText = btnCopyProfileCode.innerHTML;
+                btnCopyProfileCode.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+                setTimeout(() => btnCopyProfileCode.innerHTML = originalText, 2000);
             }
-        };
+        });
     }
 
     form.addEventListener('submit', (e) => {
@@ -1048,65 +1068,164 @@ function showGithubStatus(msg, type) {
     }
 }
 
-// --- Import/Export ENV ---
+// --- Crypto Helpers ---
 
-function exportEnvConfig() {
-    if (!githubToken && !githubRepo) {
-        showGithubStatus('Nada para exportar (Token/Repo vazios).', 'error');
+async function generateKey(password, salt) {
+    const enc = new TextEncoder();
+    const keyMaterial = await window.crypto.subtle.importKey(
+        "raw",
+        enc.encode(password),
+        { name: "PBKDF2" },
+        false,
+        ["deriveKey"]
+    );
+    return window.crypto.subtle.deriveKey(
+        {
+            name: "PBKDF2",
+            salt: salt,
+            iterations: 100000,
+            hash: "SHA-256"
+        },
+        keyMaterial,
+        { name: "AES-GCM", length: 256 },
+        true,
+        ["encrypt", "decrypt"]
+    );
+}
+
+function bufferToBase64(buf) {
+    return btoa(String.fromCharCode(...new Uint8Array(buf)));
+}
+
+function base64ToBuffer(b64) {
+    return Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+}
+
+async function encryptData(data, password) {
+    const salt = window.crypto.getRandomValues(new Uint8Array(16));
+    const iv = window.crypto.getRandomValues(new Uint8Array(12));
+    const key = await generateKey(password, salt);
+    const enc = new TextEncoder();
+    const encrypted = await window.crypto.subtle.encrypt(
+        { name: "AES-GCM", iv: iv },
+        key,
+        enc.encode(JSON.stringify(data))
+    );
+
+    return {
+        salt: bufferToBase64(salt),
+        iv: bufferToBase64(iv),
+        data: bufferToBase64(encrypted)
+    };
+}
+
+async function decryptData(encryptedObj, password) {
+    try {
+        const salt = base64ToBuffer(encryptedObj.salt);
+        const iv = base64ToBuffer(encryptedObj.iv);
+        const data = base64ToBuffer(encryptedObj.data);
+        const key = await generateKey(password, salt);
+        
+        const decrypted = await window.crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: iv },
+            key,
+            data
+        );
+        
+        const dec = new TextDecoder();
+        return JSON.parse(dec.decode(decrypted));
+    } catch (e) {
+        return null; // Senha incorreta ou dados corrompidos
+    }
+}
+
+// --- Profile Management ---
+
+async function handleProfileLogin() {
+    const pwdInput = document.getElementById('profile-password-input');
+    const pwd = pwdInput.value.trim();
+    if (!pwd) {
+        showGithubStatus('Digite sua senha.', 'error');
         return;
     }
 
-    const content = `GITHUB_TOKEN=${githubToken}\nGITHUB_REPO=${githubRepo}`;
-    const blob = new Blob([content], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'finance-config.env';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    
-    showGithubStatus('Arquivo .env gerado!', 'success');
+    if (!USER_PROFILES || USER_PROFILES.length === 0) {
+        showGithubStatus('Nenhum perfil cadastrado no sistema (profiles.js vazio).', 'error');
+        return;
+    }
+
+    const btn = document.getElementById('profile-login-btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    btn.disabled = true;
+
+    let foundProfile = null;
+
+    // Tentar desencriptar cada perfil com a senha fornecida
+    for (const profile of USER_PROFILES) {
+        const result = await decryptData(profile, pwd);
+        if (result && result.token && result.repo) {
+            foundProfile = result;
+            break;
+        }
+    }
+
+    if (foundProfile) {
+        // Sucesso!
+        if (confirm(`Perfil encontrado: ${foundProfile.repo}\nDeseja carregar este perfil? (Isso limpará os dados locais atuais)`)) {
+            // 1. Set Config
+            githubToken = foundProfile.token;
+            githubRepo = foundProfile.repo;
+            localStorage.setItem('githubToken', githubToken);
+            localStorage.setItem('githubRepo', githubRepo);
+            
+            // 2. Limpar dados locais (Factory Reset)
+            localStorage.removeItem('expenses');
+            localStorage.removeItem('categories');
+            localStorage.removeItem('monthlySettings');
+            localStorage.removeItem('monthLocks');
+            localStorage.removeItem('accordionState');
+            
+            // 3. Tentar baixar dados
+            showGithubStatus('Perfil carregado! Baixando dados...', 'success');
+            
+            // Pequeno delay para UI atualizar
+            setTimeout(() => {
+                downloadFromGithub(); // Esta função já recarrega a página ao final
+            }, 500);
+        } else {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    } else {
+        showGithubStatus('Senha incorreta ou perfil não encontrado.', 'error');
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }
 }
 
-function importEnvConfig(file) {
-    if (!file) return;
+async function handleGenerateProfileCode() {
+    const token = document.getElementById('github-token').value.trim();
+    const repo = document.getElementById('github-repo').value.trim();
+    const pwd = document.getElementById('new-profile-password').value.trim();
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-        const text = e.target.result;
-        const lines = text.split('\n');
-        let foundToken = '';
-        let foundRepo = '';
+    if (!token || !repo || !pwd) {
+        showGithubStatus('Preencha Token, Repositório e Senha para gerar o perfil!', 'error');
+        return;
+    }
 
-        lines.forEach(line => {
-            const part = line.trim();
-            if (part.startsWith('GITHUB_TOKEN=')) {
-                foundToken = part.split('=')[1].trim();
-            } else if (part.startsWith('GITHUB_REPO=')) {
-                foundRepo = part.split('=')[1].trim();
-            }
-        });
+    const encrypted = await encryptData({ token, repo }, pwd);
+    
+    const code = `    {
+        "iv": "${encrypted.iv}",
+        "salt": "${encrypted.salt}",
+        "data": "${encrypted.data}"
+    },`;
 
-        if (foundToken || foundRepo) {
-            if (foundToken) {
-                githubToken = foundToken;
-                localStorage.setItem('githubToken', foundToken);
-                document.getElementById('github-token').value = foundToken;
-            }
-            if (foundRepo) {
-                githubRepo = foundRepo;
-                localStorage.setItem('githubRepo', foundRepo);
-                document.getElementById('github-repo').value = foundRepo;
-            }
-            showGithubStatus('Configuração importada com sucesso!', 'success');
-        } else {
-            showGithubStatus('Nenhuma chave válida encontrada no arquivo.', 'error');
-        }
-    };
-    reader.readAsText(file);
+    const codeArea = document.getElementById('generated-profile-code');
+    codeArea.value = code;
+    codeArea.style.display = 'block';
+    document.getElementById('copy-profile-code-btn').style.display = 'inline-block';
 }
 
 // Start
