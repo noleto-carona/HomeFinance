@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Controle Financeiro</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="manifest" href="manifest.json">
@@ -194,27 +194,27 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="monthly-goal-input">Meta de Gastos</label>
-                                <input type="number" id="monthly-goal-input" step="0.01" placeholder="0,00">
+                                <input type="text" id="monthly-goal-input" inputmode="decimal" placeholder="0,00">
                             </div>
                             <div class="form-group">
                                 <label for="salary-input">Salário</label>
-                                <input type="number" id="salary-input" step="0.01" placeholder="0,00">
+                                <input type="text" id="salary-input" inputmode="decimal" placeholder="0,00">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="other-income-input">Outras Receitas</label>
-                                <input type="number" id="other-income-input" step="0.01" placeholder="0,00">
+                                <input type="text" id="other-income-input" inputmode="decimal" placeholder="0,00">
                             </div>
                             <div class="form-group">
                                 <label for="card-reimburse-input">Devoluções de Cartão</label>
-                                <input type="number" id="card-reimburse-input" step="0.01" placeholder="0,00">
+                                <input type="text" id="card-reimburse-input" inputmode="decimal" placeholder="0,00">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="loan-return-input">Devoluções de Empréstimos</label>
-                                <input type="number" id="loan-return-input" step="0.01" placeholder="0,00">
+                                <input type="text" id="loan-return-input" inputmode="decimal" placeholder="0,00">
                             </div>
                         </div>
                         <button id="save-month-settings-btn" class="submit-btn">Salvar Configurações do Mês</button>
@@ -284,7 +284,7 @@
         </div>
     </div>
 
-    <script src="script.js?v=fix_delete"></script>
+    <script src="script.js?v=2.0"></script>
 </body>
 
 </html>

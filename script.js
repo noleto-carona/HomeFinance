@@ -482,11 +482,11 @@ function renderSettings() {
     });
 
     const s = getSettingsForCurrentMonth();
-    if (monthlyGoalInput) monthlyGoalInput.value = Number(s.goal || 0).toFixed(2);
-    if (salaryInput) salaryInput.value = Number(s.salary || 0).toFixed(2);
-    if (otherIncomeInput) otherIncomeInput.value = Number(s.otherIncome || 0).toFixed(2);
-    if (cardReimburseInput) cardReimburseInput.value = Number(s.cardReimburse || 0).toFixed(2);
-    if (loanReturnInput) loanReturnInput.value = Number(s.loanReturn || 0).toFixed(2);
+    if (monthlyGoalInput) monthlyGoalInput.value = Number(s.goal || 0).toFixed(2).replace('.', ',');
+    if (salaryInput) salaryInput.value = Number(s.salary || 0).toFixed(2).replace('.', ',');
+    if (otherIncomeInput) otherIncomeInput.value = Number(s.otherIncome || 0).toFixed(2).replace('.', ',');
+    if (cardReimburseInput) cardReimburseInput.value = Number(s.cardReimburse || 0).toFixed(2).replace('.', ',');
+    if (loanReturnInput) loanReturnInput.value = Number(s.loanReturn || 0).toFixed(2).replace('.', ',');
 }
 
 // Category Management
