@@ -165,6 +165,19 @@
                             <i class="fas fa-save"></i> Salvar Configuração
                         </button>
 
+                        <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                            <p style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">Transferir Configuração (.env)</p>
+                            <div style="display: flex; gap: 10px;">
+                                <button id="export-env-btn" class="text-btn" style="flex: 1; font-size: 0.8rem;">
+                                    <i class="fas fa-file-export"></i> Exportar
+                                </button>
+                                <button id="import-env-btn-trigger" class="text-btn" style="flex: 1; font-size: 0.8rem;">
+                                    <i class="fas fa-file-import"></i> Importar
+                                </button>
+                                <input type="file" id="import-env-file" accept=".env,.txt" style="display: none;">
+                            </div>
+                        </div>
+
                         <div class="github-actions"
                             style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
                             <button id="github-sync-upload-btn" class="submit-btn"

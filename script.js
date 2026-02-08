@@ -800,6 +800,26 @@ function setupEventListeners() {
         };
     }
 
+    // ENV Import/Export Listeners
+    const btnExportEnv = document.getElementById('export-env-btn');
+    const btnImportEnvTrigger = document.getElementById('import-env-btn-trigger');
+    const fileInputEnv = document.getElementById('import-env-file');
+
+    if (btnExportEnv) {
+        btnExportEnv.onclick = exportEnvConfig;
+    }
+
+    if (btnImportEnvTrigger && fileInputEnv) {
+        btnImportEnvTrigger.onclick = () => fileInputEnv.click();
+        fileInputEnv.onchange = (e) => {
+            if (e.target.files.length > 0) {
+                importEnvConfig(e.target.files[0]);
+                // Limpar input para permitir re-importar mesmo arquivo se necessário
+                e.target.value = '';
+            }
+        };
+    }
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (isCurrentMonthLocked()) return;
@@ -1026,6 +1046,67 @@ function showGithubStatus(msg, type) {
             setTimeout(() => el.textContent = '', 5000);
         }
     }
+}
+
+// --- Import/Export ENV ---
+
+function exportEnvConfig() {
+    if (!githubToken && !githubRepo) {
+        showGithubStatus('Nada para exportar (Token/Repo vazios).', 'error');
+        return;
+    }
+
+    const content = `GITHUB_TOKEN=${githubToken}\nGITHUB_REPO=${githubRepo}`;
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'finance-config.env';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    showGithubStatus('Arquivo .env gerado!', 'success');
+}
+
+function importEnvConfig(file) {
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        const text = e.target.result;
+        const lines = text.split('\n');
+        let foundToken = '';
+        let foundRepo = '';
+
+        lines.forEach(line => {
+            const part = line.trim();
+            if (part.startsWith('GITHUB_TOKEN=')) {
+                foundToken = part.split('=')[1].trim();
+            } else if (part.startsWith('GITHUB_REPO=')) {
+                foundRepo = part.split('=')[1].trim();
+            }
+        });
+
+        if (foundToken || foundRepo) {
+            if (foundToken) {
+                githubToken = foundToken;
+                localStorage.setItem('githubToken', foundToken);
+                document.getElementById('github-token').value = foundToken;
+            }
+            if (foundRepo) {
+                githubRepo = foundRepo;
+                localStorage.setItem('githubRepo', foundRepo);
+                document.getElementById('github-repo').value = foundRepo;
+            }
+            showGithubStatus('Configuração importada com sucesso!', 'success');
+        } else {
+            showGithubStatus('Nenhuma chave válida encontrada no arquivo.', 'error');
+        }
+    };
+    reader.readAsText(file);
 }
 
 // Start
