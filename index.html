@@ -52,6 +52,10 @@
                         <span class="card-value value-positive" id="current-balance">R$ 0,00</span>
                     </div>
                     <div class="card card-balance">
+                        <span class="card-label">Valor Pago</span>
+                        <span class="card-value" id="total-paid" style="color: #0ea5e9;">R$ 0,00</span>
+                    </div>
+                    <div class="card card-balance">
                         <span class="card-label">Prejuízo Acumulado</span>
                         <span class="card-value value-negative" id="cumulative-deficit">R$ 0,00</span>
                     </div>
@@ -133,7 +137,7 @@
                     <span>Gerenciar Categorias</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
-                <div class="accordion-content" id="accordion-categories">
+                <div class="accordion-content hidden" id="accordion-categories">
                     <div class="dashboard-section">
                         <div class="list-header">
                             <h3>Gerenciar Categorias</h3>
@@ -151,19 +155,22 @@
                     <span>Backup em Nuvem (GitHub)</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
-                <div class="accordion-content collapsed" id="accordion-github">
+                <div class="accordion-content hidden" id="accordion-github">
                     <div class="dashboard-section">
-                        <div class="form-group">
-                            <label for="github-token">GitHub Token (ghp_...)</label>
-                            <input type="password" id="github-token" placeholder="Cole seu token aqui">
+                        <!-- Área de Configuração (Token/Repo) - Visível apenas para Admins ou se não tiver token -->
+                        <div id="github-config-area">
+                            <div class="form-group">
+                                <label for="github-token">GitHub Token (ghp_...)</label>
+                                <input type="password" id="github-token" placeholder="Cole seu token aqui">
+                            </div>
+                            <div class="form-group">
+                                <label for="github-repo">Repositório (usuario/nome-repo)</label>
+                                <input type="text" id="github-repo" placeholder="ex: noleto/meu-financeiro">
+                            </div>
+                            <button id="github-save-config-btn" class="text-btn">
+                                <i class="fas fa-save"></i> Salvar Configuração
+                            </button>
                         </div>
-                        <div class="form-group">
-                            <label for="github-repo">Repositório (usuario/nome-repo)</label>
-                            <input type="text" id="github-repo" placeholder="ex: noleto/meu-financeiro">
-                        </div>
-                        <button id="github-save-config-btn" class="text-btn">
-                            <i class="fas fa-save"></i> Salvar Configuração
-                        </button>
 
                         <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
                             <p style="font-size: 0.9rem; font-weight: 600; color: #333; margin-bottom: 10px;">Gerenciamento de Perfis</p>
@@ -178,16 +185,31 @@
                                 <p style="font-size: 0.75rem; color: #64748b; margin-top: 5px;">Isso carregará seu Token/Repo e baixará seus dados do GitHub.</p>
                             </div>
 
-                            <!-- Gerar Código -->
-                            <div class="accordion-section" style="margin-bottom: 0;">
+                            <!-- Gerar Código - Visível apenas para Admins -->
+                            <div class="accordion-section hidden" id="admin-profile-generator" style="margin-bottom: 0;">
                                 <button class="accordion-header accordion-toggle" data-target="accordion-profile-gen" style="background: none; padding: 5px 0; font-size: 0.85rem; color: #0ea5e9;">
-                                    <span>Criar/Gerar Novo Perfil</span>
+                                    <span>Criar/Gerar Novo Perfil (Admin)</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                                 <div class="accordion-content hidden" id="accordion-profile-gen">
                                     <div style="background: #f0f9ff; padding: 10px; border-radius: 8px; margin-top: 5px;">
                                         <p style="font-size: 0.8rem; margin-bottom: 8px;">1. Preencha Token e Repo acima.<br>2. Defina uma senha abaixo.<br>3. Gere o código e envie para o administrador.</p>
+                                        
+                                        <label style="font-size: 0.75rem; color: #64748b; display: block; margin-bottom: 4px;">Nome do Arquivo de Dados (Opcional)</label>
+                                        <input type="text" id="new-profile-filename" placeholder="Ex: dados_joao.json (Padrão: dados_financeiros.json)" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.85rem;">
+
+                                        <label style="font-size: 0.75rem; color: #64748b; display: block; margin-bottom: 4px;">Senha do Perfil</label>
                                         <input type="password" id="new-profile-password" placeholder="Defina uma senha segura" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                                        
+                                        <!-- Checkbox Admin -->
+                                        <div class="form-group checkbox-group" style="margin-bottom: 8px;">
+                                            <label class="switch" style="transform: scale(0.8); margin-right: 5px;">
+                                                <input type="checkbox" id="is-new-profile-admin">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span style="font-size: 0.8rem; color: #333;">Permissão de Administrador?</span>
+                                        </div>
+
                                         <button id="generate-profile-code-btn" class="text-btn" style="width: 100%; text-align: center; border: 1px solid #0ea5e9;">
                                             <i class="fas fa-code"></i> Gerar Código Criptografado
                                         </button>
@@ -212,6 +234,7 @@
                         <p id="github-status" class="status-msg"
                             style="margin-top: 10px; font-size: 0.9rem; text-align: center; color: var(--text-secondary);">
                         </p>
+                        <p id="current-file-display" style="font-size: 0.75rem; text-align: center; color: #94a3b8; margin-top: 5px;"></p>
                     </div>
                 </div>
             </div>
@@ -221,7 +244,7 @@
                     <span>Metas e Receitas do Mês</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
-                <div class="accordion-content collapsed" id="accordion-month">
+                <div class="accordion-content hidden" id="accordion-month">
                     <div class="dashboard-section">
                         <h3>Receitas e Meta do Mês</h3>
                         <div class="form-row">
@@ -251,7 +274,16 @@
                             </div>
                         </div>
                         <button id="save-month-settings-btn" class="submit-btn">Salvar Configurações do Mês</button>
-                        <button id="reset-data-btn" class="delete-btn" style="margin-top: 0;">
+                        
+                        <!-- Área de Troca de Senha -->
+                        <div style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px;">
+                            <h3 style="font-size: 1rem; color: #64748b; margin-bottom: 10px;">Segurança</h3>
+                            <button id="change-password-btn" class="submit-btn" style="background-color: #64748b;">
+                                <i class="fas fa-key"></i> Solicitar Troca de Senha
+                            </button>
+                        </div>
+
+                        <button id="reset-data-btn" class="delete-btn" style="margin-top: 20px;">
                             Restaurar Padrão de Fábrica
                         </button>
                     </div>
@@ -260,6 +292,52 @@
         </main>
 
         <!-- Removido: Botão Flutuante de Adicionar (agora na barra inferior) -->
+
+        <!-- Modal Genérico para Mensagens (Substitui Alert/Confirm) -->
+        <div id="message-modal" class="modal hidden" style="z-index: 2000;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="msg-modal-title">Título</h3>
+                    <button class="close-btn" id="msg-modal-close">&times;</button>
+                </div>
+                <div style="margin-bottom: 24px;">
+                    <p id="msg-modal-text" style="color: var(--text-secondary); line-height: 1.6; font-size: 1rem;">Mensagem aqui.</p>
+                </div>
+                <div class="modal-actions" style="display: flex; gap: 12px; justify-content: flex-end;">
+                    <button id="msg-modal-cancel" class="delete-btn hidden" style="width: auto; margin-top: 0; padding: 10px 20px; border: 1px solid var(--border-color); color: var(--text-secondary);">Cancelar</button>
+                    <button id="msg-modal-confirm" class="submit-btn" style="width: auto; margin-top: 0; min-width: 100px; padding: 10px 24px;">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Troca de Senha -->
+        <div id="change-pass-modal" class="modal hidden" style="z-index: 2000;">
+            <div class="modal-content" style="max-width: 350px;">
+                <div class="modal-header">
+                    <h3>Trocar Senha</h3>
+                    <button class="close-btn" id="close-change-pass">&times;</button>
+                </div>
+                <div style="margin-top: 15px;">
+                    <div class="form-group">
+                        <label for="new-pass-input">Nova Senha</label>
+                        <input type="text" id="new-pass-input" placeholder="Digite a nova senha">
+                    </div>
+                    <div class="alert-box" style="background-color: #fff3cd; color: #856404; padding: 10px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 15px; border: 1px solid #ffeeba;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Atenção:</strong> Se você perder ou esquecer esta senha, <strong>seus dados serão perdidos permanentemente</strong>. Não há recuperação de senha. Entre em contato com o administrador para gerar um novo acesso.
+                    </div>
+                    <button id="generate-new-pass-code" class="submit-btn">Gerar Código de Atualização</button>
+                    
+                    <div id="new-pass-result" class="hidden" style="margin-top: 15px;">
+                        <p style="font-size: 0.9rem; margin-bottom: 5px; color: #333;">Envie este código ao Administrador:</p>
+                        <textarea id="new-pass-code-area" readonly style="width: 100%; height: 80px; font-family: monospace; font-size: 0.8rem; padding: 8px; border: 1px solid #ccc; border-radius: 6px; resize: none;"></textarea>
+                        <button id="copy-new-pass-btn" class="submit-btn" style="margin-top: 5px; background-color: #10b981;">
+                            <i class="fas fa-copy"></i> Copiar Código
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Modal de Adicionar/Editar -->
         <div id="modal" class="modal hidden">
@@ -318,7 +396,7 @@
     </div>
 
     <script src="profiles.js"></script>
-    <script src="script.js?v=2.1"></script>
+    <script src="script.js?v=2.2"></script>
 </body>
 
 </html>
