@@ -7,7 +7,16 @@
       "amount": 2441,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
+    },
+    {
+      "id": 1770602639282,
+      "monthKey": "2026-1",
+      "description": "Água / DEB.AUTO",
+      "amount": 150,
+      "day": 11,
+      "category": "Moradia",
+      "paid": true
     }
   ],
   "categories": [
@@ -20,7 +29,15 @@
     "Alimentação",
     "Saúde"
   ],
-  "monthlySettings": {},
+  "monthlySettings": {
+    "2026-1": {
+      "goal": 6000,
+      "salary": 0,
+      "otherIncome": 150,
+      "cardReimburse": 2441,
+      "loanReturn": 0
+    }
+  },
   "monthLocks": {},
-  "backupDate": "2026-02-09T01:54:09.164Z"
+  "backupDate": "2026-02-09T02:06:15.011Z"
 }
