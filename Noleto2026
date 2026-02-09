@@ -160,7 +160,7 @@
       "amount": 1100,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770604712657,
@@ -187,7 +187,7 @@
       "amount": 431.35,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770604810001,
@@ -205,7 +205,7 @@
       "amount": 651.47,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770604855952,
@@ -223,7 +223,7 @@
       "amount": 16,
       "day": 12,
       "category": "Serviços",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770605051410,
@@ -250,7 +250,7 @@
       "amount": 554,
       "day": 15,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770605102011,
@@ -313,7 +313,7 @@
   "monthlySettings": {
     "2026-1": {
       "goal": 6000,
-      "salary": 0,
+      "salary": 5500,
       "otherIncome": 3337,
       "cardReimburse": 0,
       "loanReturn": 0
@@ -329,5 +329,5 @@
   "monthLocks": {
     "2026-0": true
   },
-  "backupDate": "2026-02-09T20:19:34.661Z"
+  "backupDate": "2026-02-09T20:49:48.396Z"
 }
