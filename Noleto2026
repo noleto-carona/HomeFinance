@@ -2,7 +2,7 @@
   "expenses": [
     {
       "id": 1770602042021,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "CARTÃO NU BANCK",
       "amount": 2827.32,
       "day": 7,
@@ -11,7 +11,7 @@
     },
     {
       "id": 1770602639282,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "Água / DEB.AUTO",
       "amount": 126.96,
       "day": 7,
@@ -20,7 +20,7 @@
     },
     {
       "id": 1770603377838,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "IPVA 1/5",
       "amount": 106.1,
       "day": 8,
@@ -29,7 +29,7 @@
     },
     {
       "id": 1770603393665,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "ALUGUEL",
       "amount": 1100,
       "day": 10,
@@ -38,7 +38,7 @@
     },
     {
       "id": 1770603433488,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "CARTÃO CREDI FATO",
       "amount": 1489.04,
       "day": 10,
@@ -47,7 +47,7 @@
     },
     {
       "id": 1770603457612,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "CARTÃO C6 BANK",
       "amount": 305,
       "day": 10,
@@ -56,7 +56,7 @@
     },
     {
       "id": 1770603486953,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "Claro / AUT",
       "amount": 134.16,
       "day": 12,
@@ -65,7 +65,7 @@
     },
     {
       "id": 1770603527159,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "MANUTENÇÃO CAIXA",
       "amount": 16,
       "day": 12,
@@ -74,7 +74,7 @@
     },
     {
       "id": 1770603543827,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "BOLETO ITAU",
       "amount": 554,
       "day": 15,
@@ -83,7 +83,7 @@
     },
     {
       "id": 1770603599588,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "INTERNET",
       "amount": 100,
       "day": 10,
@@ -92,7 +92,7 @@
     },
     {
       "id": 1770603630507,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "Cartório PSO",
       "amount": 365,
       "day": 30,
@@ -101,7 +101,7 @@
     },
     {
       "id": 1770603694212,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "CARTÃO CX",
       "amount": 56.83,
       "day": 10,
@@ -110,7 +110,7 @@
     },
     {
       "id": 1770603723225,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "Energia / DEB.AUTO",
       "amount": 404.28,
       "day": 10,
@@ -119,7 +119,7 @@
     },
     {
       "id": 1770603765920,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "CARTÃO CAIXA 0287",
       "amount": 2159.24,
       "day": 10,
@@ -128,7 +128,7 @@
     },
     {
       "id": 1770603799646,
-      "monthKey": "2026-1",
+      "monthKey": "2026-0",
       "description": "SEGURO BB",
       "amount": 47,
       "day": 13,
@@ -153,8 +153,15 @@
       "otherIncome": 350,
       "cardReimburse": 195,
       "loanReturn": 65
+    },
+    "2026-0": {
+      "goal": 6000,
+      "salary": 8605,
+      "otherIncome": 350,
+      "cardReimburse": 195,
+      "loanReturn": 65
     }
   },
   "monthLocks": {},
-  "backupDate": "2026-02-09T02:23:45.226Z"
+  "backupDate": "2026-02-09T02:35:10.430Z"
 }
