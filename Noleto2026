@@ -1,0 +1,43 @@
+{
+  "expenses": [
+    {
+      "id": 1770602042021,
+      "monthKey": "2026-1",
+      "description": "CARTÃO CS BANK",
+      "amount": 2441,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1770602639282,
+      "monthKey": "2026-1",
+      "description": "Água / DEB.AUTO",
+      "amount": 150,
+      "day": 11,
+      "category": "Moradia",
+      "paid": true
+    }
+  ],
+  "categories": [
+    "Moradia",
+    "Cartão de Crédito",
+    "Transporte",
+    "Serviços",
+    "Lazer",
+    "Outros",
+    "Alimentação",
+    "Saúde"
+  ],
+  "monthlySettings": {
+    "2026-1": {
+      "goal": 6000,
+      "salary": 0,
+      "otherIncome": 150,
+      "cardReimburse": 2441,
+      "loanReturn": 0
+    }
+  },
+  "monthLocks": {},
+  "backupDate": "2026-02-09T02:06:15.011Z"
+}

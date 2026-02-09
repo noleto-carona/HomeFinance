@@ -1,13 +1,13 @@
 {
   "expenses": [
     {
-      "id": 1770600711012,
+      "id": 1770600182153,
       "monthKey": "2026-1",
-      "description": "CARTÃO CS BANK",
-      "amount": 2441,
-      "day": 10,
+      "description": "BARRA DE CHOCOLATE MAVALERIO",
+      "amount": 25.9,
+      "day": 1,
       "category": "Cartão de Crédito",
-      "paid": true
+      "paid": false
     }
   ],
   "categories": [
@@ -22,5 +22,5 @@
   ],
   "monthlySettings": {},
   "monthLocks": {},
-  "backupDate": "2026-02-09T01:32:01.595Z"
+  "backupDate": "2026-02-09T01:23:09.753Z"
 }
