@@ -586,6 +586,13 @@ function openModal(expense = null) {
         document.getElementById('due-day').value = expense.day;
         document.getElementById('is-paid').checked = expense.paid;
 
+        // Definir mês de referência
+        if (expense.monthKey) {
+            const [y, m] = expense.monthKey.split('-');
+            const formattedMonth = `${y}-${String(parseInt(m) + 1).padStart(2, '0')}`;
+            document.getElementById('expense-month').value = formattedMonth;
+        }
+
         updateCategorySelect(expense.category);
 
         deleteBtn.classList.remove('hidden');
@@ -594,6 +601,11 @@ function openModal(expense = null) {
         form.reset();
         document.getElementById('expense-id').value = '';
         document.getElementById('amount').value = '';
+
+        // Definir mês padrão (mês da visualização atual)
+        const y = currentDate.getFullYear();
+        const m = currentDate.getMonth() + 1;
+        document.getElementById('expense-month').value = `${y}-${String(m).padStart(2, '0')}`;
 
         updateCategorySelect(categories[0] || 'Outros');
 
@@ -830,17 +842,24 @@ function setupEventListeners() {
         const day = parseInt(document.getElementById('due-day').value);
         const category = document.getElementById('category').value;
         const paid = document.getElementById('is-paid').checked;
-        const currentKey = getMonthKey(currentDate);
+        
+        // Obter Mês Selecionado
+        const monthInput = document.getElementById('expense-month').value; // YYYY-MM
+        let selectedKey = getMonthKey(currentDate); // Fallback
+        if (monthInput) {
+            const [y, m] = monthInput.split('-');
+            selectedKey = `${y}-${parseInt(m) - 1}`;
+        }
 
         if (id) {
             const index = expenses.findIndex(e => e.id == id);
             if (index !== -1) {
-                expenses[index] = { ...expenses[index], description, amount, day, category, paid };
+                expenses[index] = { ...expenses[index], description, amount, day, category, paid, monthKey: selectedKey };
             }
         } else {
             const newExpense = {
                 id: Date.now(),
-                monthKey: currentKey,
+                monthKey: selectedKey,
                 description,
                 amount,
                 day,
