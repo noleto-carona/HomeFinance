@@ -599,6 +599,9 @@ function openModal(expense = null) {
 
         deleteBtn.classList.add('hidden');
     }
+
+    // Focar no campo descrição automaticamente
+    setTimeout(() => document.getElementById('description').focus(), 50);
 }
 
 function closeModal() {
