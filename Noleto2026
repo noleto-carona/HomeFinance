@@ -142,7 +142,7 @@
       "amount": 2181.35,
       "day": 7,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770604630875,
@@ -151,7 +151,7 @@
       "amount": 201.34,
       "day": 7,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770604647902,
@@ -169,7 +169,7 @@
       "amount": 56.48,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770604741542,
@@ -196,7 +196,7 @@
       "amount": 106.1,
       "day": 8,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770604828380,
@@ -214,7 +214,7 @@
       "amount": 134.16,
       "day": 12,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770604970668,
@@ -241,7 +241,7 @@
       "amount": 47,
       "day": 13,
       "category": "Saúde",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770605086920,
@@ -259,7 +259,7 @@
       "amount": 100,
       "day": 10,
       "category": "INTERNET",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770605126719,
@@ -329,5 +329,5 @@
   "monthLocks": {
     "2026-0": true
   },
-  "backupDate": "2026-02-09T02:51:57.025Z"
+  "backupDate": "2026-02-09T20:19:34.661Z"
 }
