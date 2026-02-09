@@ -326,6 +326,8 @@
       "loanReturn": 65
     }
   },
-  "monthLocks": {},
-  "backupDate": "2026-02-09T02:50:00.129Z"
+  "monthLocks": {
+    "2026-0": true
+  },
+  "backupDate": "2026-02-09T02:51:57.025Z"
 }
