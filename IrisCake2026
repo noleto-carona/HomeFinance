@@ -1,0 +1,35 @@
+{
+  "expenses": [
+    {
+      "id": 1770605841620,
+      "monthKey": "2026-1",
+      "description": "Barra de chocolate ",
+      "amount": 25,
+      "day": 10,
+      "category": "DOCES",
+      "paid": true
+    }
+  ],
+  "categories": [
+    "Moradia",
+    "Cartão de Crédito",
+    "Transporte",
+    "Serviços",
+    "Lazer",
+    "Outros",
+    "Alimentação",
+    "Saúde",
+    "DOCES"
+  ],
+  "monthlySettings": {
+    "2026-1": {
+      "goal": 1500,
+      "salary": 25,
+      "otherIncome": 0,
+      "cardReimburse": 0,
+      "loanReturn": 0
+    }
+  },
+  "monthLocks": {},
+  "backupDate": "2026-02-09T02:59:59.821Z"
+}
