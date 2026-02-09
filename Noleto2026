@@ -60,7 +60,7 @@
       "description": "Claro / AUT",
       "amount": 134.16,
       "day": 12,
-      "category": "Serviços",
+      "category": "TELEFONIA",
       "paid": true
     },
     {
@@ -87,7 +87,7 @@
       "description": "INTERNET",
       "amount": 100,
       "day": 10,
-      "category": "Moradia",
+      "category": "INTERNET",
       "paid": true
     },
     {
@@ -134,6 +134,168 @@
       "day": 13,
       "category": "Saúde",
       "paid": true
+    },
+    {
+      "id": 1770604601614,
+      "monthKey": "2026-1",
+      "description": "CARTÃO NU BANCK",
+      "amount": 2181.35,
+      "day": 7,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1770604630875,
+      "monthKey": "2026-1",
+      "description": "AGUA / DEB.AUT",
+      "amount": 201.34,
+      "day": 7,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1770604647902,
+      "monthKey": "2026-1",
+      "description": "ALUGUEL",
+      "amount": 1100,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1770604712657,
+      "monthKey": "2026-1",
+      "description": "CARTÃO CAIXA 4441",
+      "amount": 56.48,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1770604741542,
+      "monthKey": "2026-1",
+      "description": "CARTÃO C6 BANK",
+      "amount": 2441.9,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1770604775822,
+      "monthKey": "2026-1",
+      "description": "ENERGIA / DEB.AUTO",
+      "amount": 431.35,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1770604810001,
+      "monthKey": "2026-1",
+      "description": "IPVA 2/5",
+      "amount": 106.1,
+      "day": 8,
+      "category": "Transporte",
+      "paid": false
+    },
+    {
+      "id": 1770604828380,
+      "monthKey": "2026-1",
+      "description": "CARTÃO CAIXA 0287",
+      "amount": 651.47,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1770604855952,
+      "monthKey": "2026-1",
+      "description": "CLARO / DEB.AUTO",
+      "amount": 134.16,
+      "day": 12,
+      "category": "TELEFONIA",
+      "paid": false
+    },
+    {
+      "id": 1770604970668,
+      "monthKey": "2026-1",
+      "description": "MANUTENÇÃO CX",
+      "amount": 16,
+      "day": 12,
+      "category": "Serviços",
+      "paid": false
+    },
+    {
+      "id": 1770605051410,
+      "monthKey": "2026-1",
+      "description": "PNEU DIANTEIRO SIENA / FABRICIO 50%",
+      "amount": 540,
+      "day": 12,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1770605073822,
+      "monthKey": "2026-1",
+      "description": "SEGURO VIDA BB",
+      "amount": 47,
+      "day": 13,
+      "category": "Saúde",
+      "paid": false
+    },
+    {
+      "id": 1770605086920,
+      "monthKey": "2026-1",
+      "description": "BOLETO ITAU SIENA",
+      "amount": 554,
+      "day": 15,
+      "category": "Transporte",
+      "paid": false
+    },
+    {
+      "id": 1770605102011,
+      "monthKey": "2026-1",
+      "description": "INTERNET",
+      "amount": 100,
+      "day": 10,
+      "category": "INTERNET",
+      "paid": false
+    },
+    {
+      "id": 1770605126719,
+      "monthKey": "2026-1",
+      "description": "KIT AMORTECEDORES",
+      "amount": 458,
+      "day": 20,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1770605146650,
+      "monthKey": "2026-1",
+      "description": "EMBREAGEM SIENA LUK",
+      "amount": 329,
+      "day": 20,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1770605164677,
+      "monthKey": "2026-1",
+      "description": "SERVIÇO MECANICA",
+      "amount": 1580,
+      "day": 20,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1770605180064,
+      "monthKey": "2026-1",
+      "description": "AUTO ELETRICA",
+      "amount": 430,
+      "day": 27,
+      "category": "Transporte",
+      "paid": true
     }
   ],
   "categories": [
@@ -144,15 +306,17 @@
     "Lazer",
     "Outros",
     "Alimentação",
-    "Saúde"
+    "Saúde",
+    "TELEFONIA",
+    "INTERNET"
   ],
   "monthlySettings": {
     "2026-1": {
       "goal": 6000,
-      "salary": 8605,
-      "otherIncome": 350,
-      "cardReimburse": 195,
-      "loanReturn": 65
+      "salary": 0,
+      "otherIncome": 3337,
+      "cardReimburse": 0,
+      "loanReturn": 0
     },
     "2026-0": {
       "goal": 6000,
@@ -163,5 +327,5 @@
     }
   },
   "monthLocks": {},
-  "backupDate": "2026-02-09T02:35:10.430Z"
+  "backupDate": "2026-02-09T02:48:56.631Z"
 }
