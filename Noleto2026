@@ -178,7 +178,7 @@
       "amount": 2441.9,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1770604775822,
@@ -296,6 +296,168 @@
       "day": 27,
       "category": "Transporte",
       "paid": true
+    },
+    {
+      "id": 1772501866131.2368,
+      "monthKey": "2026-2",
+      "description": "CARTÃO NU BANCK",
+      "amount": 2135.28,
+      "day": 12,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.597,
+      "monthKey": "2026-2",
+      "description": "AGUA / DEB.AUT",
+      "amount": 126.96,
+      "day": 7,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.086,
+      "monthKey": "2026-2",
+      "description": "ALUGUEL",
+      "amount": 1100,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.8027,
+      "monthKey": "2026-2",
+      "description": "CARTÃO CAIXA 4441",
+      "amount": 70.56,
+      "day": 8,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.0042,
+      "monthKey": "2026-2",
+      "description": "CARTÃO C6 BANK",
+      "amount": 1001.47,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.0947,
+      "monthKey": "2026-2",
+      "description": "ENERGIA / DEB.AUTO",
+      "amount": 419.06,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.5188,
+      "monthKey": "2026-2",
+      "description": "IPVA 2/5",
+      "amount": 106.1,
+      "day": 8,
+      "category": "Transporte",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.7961,
+      "monthKey": "2026-2",
+      "description": "CARTÃO CAIXA 0287",
+      "amount": 467.53,
+      "day": 9,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.4893,
+      "monthKey": "2026-2",
+      "description": "CLARO / DEB.AUTO",
+      "amount": 134.16,
+      "day": 12,
+      "category": "TELEFONIA",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.5854,
+      "monthKey": "2026-2",
+      "description": "MANUTENÇÃO CX",
+      "amount": 16,
+      "day": 12,
+      "category": "Serviços",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.9358,
+      "monthKey": "2026-2",
+      "description": "SEGURO VIDA BB",
+      "amount": 47,
+      "day": 13,
+      "category": "Saúde",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.643,
+      "monthKey": "2026-2",
+      "description": "BOLETO ITAU SIENA",
+      "amount": 554,
+      "day": 15,
+      "category": "Transporte",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.929,
+      "monthKey": "2026-2",
+      "description": "INTERNET",
+      "amount": 100,
+      "day": 10,
+      "category": "INTERNET",
+      "paid": false
+    },
+    {
+      "id": 1772501866131.4844,
+      "monthKey": "2026-2",
+      "description": "CONSERTO MOTO TERCEIRO ",
+      "amount": 1895,
+      "day": 28,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1772501866131.3596,
+      "monthKey": "2026-2",
+      "description": "SERVIÇO LANTERNAGEM ",
+      "amount": 1500,
+      "day": 28,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1772501866131.6282,
+      "monthKey": "2026-2",
+      "description": "PORTA DESMANCHE SIENA ",
+      "amount": 600,
+      "day": 23,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1772502773022,
+      "monthKey": "2026-2",
+      "description": "PEÇAS E ACESSÓRIOS SIENA ",
+      "amount": 610,
+      "day": 23,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1772557880769,
+      "monthKey": "2026-2",
+      "description": "CredFatto Murfato",
+      "amount": 1294.45,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
     }
   ],
   "categories": [
@@ -315,7 +477,7 @@
       "goal": 6000,
       "salary": 5500,
       "otherIncome": 3337,
-      "cardReimburse": 0,
+      "cardReimburse": 800,
       "loanReturn": 0
     },
     "2026-0": {
@@ -324,10 +486,17 @@
       "otherIncome": 350,
       "cardReimburse": 195,
       "loanReturn": 65
+    },
+    "2026-2": {
+      "goal": 6000,
+      "salary": 0,
+      "otherIncome": 5322.76,
+      "cardReimburse": 0,
+      "loanReturn": 0
     }
   },
   "monthLocks": {
     "2026-0": true
   },
-  "backupDate": "2026-02-09T20:49:48.396Z"
+  "backupDate": "2026-03-03T17:11:46.001Z"
 }
