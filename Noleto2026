@@ -304,7 +304,7 @@
       "amount": 2135.28,
       "day": 12,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.597,
@@ -313,7 +313,7 @@
       "amount": 126.96,
       "day": 7,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.086,
@@ -322,7 +322,7 @@
       "amount": 1100,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.8027,
@@ -331,7 +331,7 @@
       "amount": 70.56,
       "day": 8,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.0042,
@@ -340,7 +340,7 @@
       "amount": 1001.47,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.0947,
@@ -349,7 +349,7 @@
       "amount": 419.06,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.5188,
@@ -358,7 +358,7 @@
       "amount": 106.1,
       "day": 8,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.7961,
@@ -367,7 +367,7 @@
       "amount": 467.53,
       "day": 9,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.4893,
@@ -376,7 +376,7 @@
       "amount": 134.16,
       "day": 12,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.5854,
@@ -385,7 +385,7 @@
       "amount": 16,
       "day": 12,
       "category": "Serviços",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.9358,
@@ -394,7 +394,7 @@
       "amount": 47,
       "day": 13,
       "category": "Saúde",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.643,
@@ -403,7 +403,7 @@
       "amount": 554,
       "day": 15,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.929,
@@ -412,7 +412,7 @@
       "amount": 100,
       "day": 10,
       "category": "INTERNET",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1772501866131.4844,
@@ -454,10 +454,10 @@
       "id": 1772557880769,
       "monthKey": "2026-2",
       "description": "CredFatto Murfato",
-      "amount": 1294.45,
+      "amount": 1297.45,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     }
   ],
   "categories": [
@@ -489,14 +489,16 @@
     },
     "2026-2": {
       "goal": 6000,
-      "salary": 0,
+      "salary": 7555,
       "otherIncome": 5322.76,
-      "cardReimburse": 0,
+      "cardReimburse": 65,
       "loanReturn": 0
     }
   },
   "monthLocks": {
-    "2026-0": true
+    "2026-0": true,
+    "2026-1": true,
+    "2026-2": false
   },
-  "backupDate": "2026-03-03T17:11:46.001Z"
+  "backupDate": "2026-03-09T17:48:27.851Z"
 }
