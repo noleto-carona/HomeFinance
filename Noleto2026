@@ -354,7 +354,7 @@
     {
       "id": 1772501866131.5188,
       "monthKey": "2026-2",
-      "description": "IPVA 2/5",
+      "description": "IPVA 3/5",
       "amount": 106.1,
       "day": 8,
       "category": "Transporte",
@@ -460,22 +460,13 @@
       "paid": true
     },
     {
-      "id": 1775193790051.163,
-      "monthKey": "2026-3",
-      "description": "CARTÃO NU BANCK",
-      "amount": 930.83,
-      "day": 12,
-      "category": "Cartão de Crédito",
-      "paid": false
-    },
-    {
       "id": 1775193790051.6045,
       "monthKey": "2026-3",
       "description": "AGUA / DEB.AUT",
       "amount": 99.08,
       "day": 7,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1775193790051.6794,
@@ -484,7 +475,7 @@
       "amount": 1120,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1775193790051.7239,
@@ -493,7 +484,7 @@
       "amount": 36.84,
       "day": 8,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1775193790051.5413,
@@ -502,7 +493,7 @@
       "amount": 930.83,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1775193790051.8337,
@@ -516,7 +507,7 @@
     {
       "id": 1775193790051.1577,
       "monthKey": "2026-3",
-      "description": "IPVA 3/5",
+      "description": "IPVA 4/5",
       "amount": 106.1,
       "day": 8,
       "category": "Transporte",
@@ -529,7 +520,7 @@
       "amount": 1729.62,
       "day": 9,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1775193790051.6113,
@@ -538,7 +529,7 @@
       "amount": 134.16,
       "day": 12,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1775193790051.7913,
@@ -556,7 +547,7 @@
       "amount": 47,
       "day": 13,
       "category": "Saúde",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1775193790051.018,
@@ -565,7 +556,7 @@
       "amount": 554,
       "day": 15,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1775193790051.474,
@@ -574,7 +565,7 @@
       "amount": 100,
       "day": 10,
       "category": "INTERNET",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1775193790051.4521,
@@ -583,7 +574,16 @@
       "amount": 552.66,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
+    },
+    {
+      "id": 1775653930079,
+      "monthKey": "2026-3",
+      "description": "CARTÃO NU BANCK",
+      "amount": 1931.04,
+      "day": 10,
+      "category": "Moradia",
+      "paid": true
     }
   ],
   "categories": [
@@ -633,5 +633,5 @@
     "2026-1": true,
     "2026-2": true
   },
-  "backupDate": "2026-04-08T12:59:32.069Z"
+  "backupDate": "2026-04-08T13:37:56.180Z"
 }
