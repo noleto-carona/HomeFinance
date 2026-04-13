@@ -1,0 +1,73 @@
+{
+  "expenses": [
+    {
+      "id": 1776087612228,
+      "monthKey": "2026-4",
+      "description": "Foto 3x4 28/3",
+      "amount": 15,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1776087659322,
+      "monthKey": "2026-4",
+      "description": "Loja do Carlos 28/3",
+      "amount": 55,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1776087708544,
+      "monthKey": "2026-4",
+      "description": "Irmãos Borsato 28/3",
+      "amount": 36,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1776088040203,
+      "monthKey": "2026-4",
+      "description": "Joelheira ",
+      "amount": 63,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1776100951123,
+      "monthKey": "2026-4",
+      "description": "MERCADO PAGO 1/6",
+      "amount": 450,
+      "day": 17,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1776100982217,
+      "monthKey": "2026-4",
+      "description": "CARTÃO NU BANCK",
+      "amount": 196,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    }
+  ],
+  "categories": [
+    "Moradia",
+    "Cartão de Crédito",
+    "Transporte",
+    "Serviços",
+    "Lazer",
+    "Outros",
+    "Alimentação",
+    "Saúde"
+  ],
+  "monthlySettings": {},
+  "monthLocks": {
+    "2026-3": false
+  },
+  "backupDate": "2026-04-13T17:23:27.318Z"
+}
