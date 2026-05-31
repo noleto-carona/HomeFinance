@@ -588,7 +588,7 @@
     {
       "id": 1776182501469,
       "monthKey": "2026-3",
-      "description": "CARTÃO MERCADO PAGO",
+      "description": "CARTÃO MERCADO PAGO 1/6",
       "amount": 918.2,
       "day": 17,
       "category": "Cartão de Crédito",
@@ -601,7 +601,7 @@
       "amount": 99.08,
       "day": 7,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.313,
@@ -610,7 +610,7 @@
       "amount": 1120,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.3137,
@@ -619,16 +619,16 @@
       "amount": 62.34,
       "day": 8,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.2654,
       "monthKey": "2026-4",
-      "description": "CARTÃO NU BANK",
+      "description": "CARTÃO NU BANK FAFA PAGOU ",
       "amount": 631.34,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.97,
@@ -646,16 +646,16 @@
       "amount": 106.1,
       "day": 8,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.4304,
       "monthKey": "2026-4",
       "description": "CARTÃO CAIXA 0287",
-      "amount": 2976.12,
+      "amount": 2605.94,
       "day": 9,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.1128,
@@ -664,7 +664,7 @@
       "amount": 134.16,
       "day": 12,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.2842,
@@ -673,7 +673,7 @@
       "amount": 16,
       "day": 12,
       "category": "Serviços",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.8958,
@@ -682,7 +682,7 @@
       "amount": 47,
       "day": 13,
       "category": "Saúde",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.0608,
@@ -691,7 +691,7 @@
       "amount": 554,
       "day": 15,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.8079,
@@ -700,7 +700,7 @@
       "amount": 100,
       "day": 10,
       "category": "INTERNET",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.199,
@@ -709,7 +709,7 @@
       "amount": 261.2,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.7246,
@@ -718,12 +718,138 @@
       "amount": 1817.84,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1777642488480.4414,
       "monthKey": "2026-4",
-      "description": "CARTÃO MERCADO PAGO 5/6",
+      "description": "CARTÃO MERCADO PAGO 2/6",
+      "amount": 918.2,
+      "day": 17,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1780237566812.0693,
+      "monthKey": "2026-5",
+      "description": "AGUA / DEB.AUT",
+      "amount": 99.51,
+      "day": 7,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1780237566812.2952,
+      "monthKey": "2026-5",
+      "description": "ALUGUEL",
+      "amount": 1120,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1780237566812.2656,
+      "monthKey": "2026-5",
+      "description": "CARTÃO CAIXA 4441",
+      "amount": 58.84,
+      "day": 8,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1780237566812.8792,
+      "monthKey": "2026-5",
+      "description": "CARTÃO NU BANK ",
+      "amount": 344,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1780237566812.92,
+      "monthKey": "2026-5",
+      "description": "ENERGIA / DEB.AUTO",
+      "amount": 313.57,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1780237566813.428,
+      "monthKey": "2026-5",
+      "description": "CARTÃO CAIXA 0287",
+      "amount": 1092.83,
+      "day": 9,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1780237566813.6296,
+      "monthKey": "2026-5",
+      "description": "CLARO / DEB.AUTO",
+      "amount": 134.16,
+      "day": 12,
+      "category": "TELEFONIA",
+      "paid": false
+    },
+    {
+      "id": 1780237566813.8726,
+      "monthKey": "2026-5",
+      "description": "MANUTENÇÃO CX",
+      "amount": 16,
+      "day": 12,
+      "category": "Serviços",
+      "paid": false
+    },
+    {
+      "id": 1780237566813.802,
+      "monthKey": "2026-5",
+      "description": "SEGURO VIDA BB",
+      "amount": 47,
+      "day": 13,
+      "category": "Saúde",
+      "paid": false
+    },
+    {
+      "id": 1780237566813.717,
+      "monthKey": "2026-5",
+      "description": "BOLETO ITAU SIENA",
+      "amount": 554,
+      "day": 15,
+      "category": "Transporte",
+      "paid": false
+    },
+    {
+      "id": 1780237566813.8037,
+      "monthKey": "2026-5",
+      "description": "INTERNET",
+      "amount": 100,
+      "day": 10,
+      "category": "INTERNET",
+      "paid": false
+    },
+    {
+      "id": 1780237566813.6626,
+      "monthKey": "2026-5",
+      "description": "CredFatto Murfato",
+      "amount": 1046.49,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1780237566813.7085,
+      "monthKey": "2026-5",
+      "description": "CARTÃO C6 BANK",
+      "amount": 2381.05,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1780237566813.6213,
+      "monthKey": "2026-5",
+      "description": "CARTÃO MERCADO PAGO 3/6",
       "amount": 918.2,
       "day": 17,
       "category": "Cartão de Crédito",
@@ -773,9 +899,9 @@
     },
     "2026-4": {
       "goal": 6000,
-      "salary": 5750,
+      "salary": 6462,
       "otherIncome": 0,
-      "cardReimburse": 2050,
+      "cardReimburse": 1551.34,
       "loanReturn": 500
     }
   },
@@ -784,7 +910,8 @@
     "2026-1": true,
     "2026-2": true,
     "2026-3": true,
-    "2026-4": false
+    "2026-4": false,
+    "2026-5": true
   },
-  "backupDate": "2026-05-05T19:31:42.675Z"
+  "backupDate": "2026-05-31T23:52:13.467Z"
 }
