@@ -48,10 +48,37 @@
     {
       "id": 1777647638130,
       "monthKey": "2026-5",
-      "description": "Parcela da mae ",
+      "description": "Parcela da mae / pai pagou",
       "amount": 209,
       "day": 10,
       "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1780272709863,
+      "monthKey": "2026-5",
+      "description": "CARTÃO CAIXA",
+      "amount": 836,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1780272788696,
+      "monthKey": "2026-5",
+      "description": "CARTÃO NU BANCK",
+      "amount": 44,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1780272852517,
+      "monthKey": "2026-5",
+      "description": "Celular Mercado pago ",
+      "amount": 450,
+      "day": 13,
+      "category": "Cartão de Crédito",
       "paid": false
     }
   ],
@@ -72,10 +99,18 @@
       "otherIncome": 0,
       "cardReimburse": 0,
       "loanReturn": 0
+    },
+    "2026-5": {
+      "goal": 1000,
+      "salary": 1400,
+      "otherIncome": 0,
+      "cardReimburse": 0,
+      "loanReturn": 0
     }
   },
   "monthLocks": {
-    "2026-3": false
+    "2026-3": false,
+    "2026-4": true
   },
-  "backupDate": "2026-05-05T19:13:56.311Z"
+  "backupDate": "2026-06-01T00:15:49.997Z"
 }
