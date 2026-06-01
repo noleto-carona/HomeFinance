@@ -80,6 +80,15 @@
       "day": 13,
       "category": "Cartão de Crédito",
       "paid": false
+    },
+    {
+      "id": 1780273107231,
+      "monthKey": "2026-5",
+      "description": "ATUALIZEI SEUS DÉBITOS DESSE MÊS ",
+      "amount": 0.01,
+      "day": 10,
+      "category": "Moradia",
+      "paid": true
     }
   ],
   "categories": [
@@ -112,5 +121,5 @@
     "2026-3": false,
     "2026-4": true
   },
-  "backupDate": "2026-06-01T00:15:49.997Z"
+  "backupDate": "2026-06-01T00:19:06.247Z"
 }
