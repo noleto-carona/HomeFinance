@@ -778,7 +778,7 @@
       "id": 1780237566813.428,
       "monthKey": "2026-5",
       "description": "CARTÃO CAIXA 0287",
-      "amount": 1092.83,
+      "amount": 1268.74,
       "day": 9,
       "category": "Cartão de Crédito",
       "paid": false
@@ -841,7 +841,7 @@
       "id": 1780237566813.7085,
       "monthKey": "2026-5",
       "description": "CARTÃO C6 BANK",
-      "amount": 2381.05,
+      "amount": 2544.94,
       "day": 10,
       "category": "Moradia",
       "paid": false
@@ -921,5 +921,5 @@
     "2026-5": false,
     "2026-6": true
   },
-  "backupDate": "2026-06-01T00:09:16.332Z"
+  "backupDate": "2026-06-02T23:52:41.922Z"
 }
