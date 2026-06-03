@@ -832,7 +832,7 @@
       "id": 1780237566813.6626,
       "monthKey": "2026-5",
       "description": "CredFatto Murfato",
-      "amount": 1046.49,
+      "amount": 1055.48,
       "day": 10,
       "category": "Cartão de Crédito",
       "paid": false
@@ -907,9 +907,9 @@
     "2026-5": {
       "goal": 6000,
       "salary": 6000,
-      "otherIncome": 836,
-      "cardReimburse": 918.2,
-      "loanReturn": 361
+      "otherIncome": 1000,
+      "cardReimburse": 468.2,
+      "loanReturn": 729
     }
   },
   "monthLocks": {
@@ -921,5 +921,5 @@
     "2026-5": false,
     "2026-6": true
   },
-  "backupDate": "2026-06-02T23:52:41.922Z"
+  "backupDate": "2026-06-03T00:01:09.250Z"
 }
