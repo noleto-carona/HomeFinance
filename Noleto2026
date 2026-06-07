@@ -745,7 +745,7 @@
       "amount": 1120,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566812.2656,
@@ -769,7 +769,7 @@
       "id": 1780237566812.92,
       "monthKey": "2026-5",
       "description": "ENERGIA / DEB.AUTO",
-      "amount": 313.57,
+      "amount": 279.76,
       "day": 10,
       "category": "Moradia",
       "paid": false
@@ -906,10 +906,10 @@
     },
     "2026-5": {
       "goal": 6000,
-      "salary": 6000,
-      "otherIncome": 1000,
-      "cardReimburse": 468.2,
-      "loanReturn": 729
+      "salary": 7152,
+      "otherIncome": 800,
+      "cardReimburse": 664.2,
+      "loanReturn": 730
     }
   },
   "monthLocks": {
@@ -921,5 +921,5 @@
     "2026-5": false,
     "2026-6": true
   },
-  "backupDate": "2026-06-03T00:23:57.034Z"
+  "backupDate": "2026-06-07T23:05:00.780Z"
 }
