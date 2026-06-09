@@ -736,7 +736,7 @@
       "amount": 99.51,
       "day": 7,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566812.2952,
@@ -754,7 +754,7 @@
       "amount": 58.84,
       "day": 8,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566812.8792,
@@ -763,7 +763,7 @@
       "amount": 344,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566812.92,
@@ -781,7 +781,7 @@
       "amount": 1268.74,
       "day": 9,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566813.6296,
@@ -790,7 +790,7 @@
       "amount": 134.16,
       "day": 12,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566813.8726,
@@ -808,7 +808,7 @@
       "amount": 47,
       "day": 13,
       "category": "Saúde",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566813.717,
@@ -817,7 +817,7 @@
       "amount": 554,
       "day": 15,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566813.8037,
@@ -826,7 +826,7 @@
       "amount": 100,
       "day": 10,
       "category": "INTERNET",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566813.6626,
@@ -835,7 +835,7 @@
       "amount": 1055.48,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566813.7085,
@@ -844,7 +844,7 @@
       "amount": 2544.94,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1780237566813.6213,
@@ -853,7 +853,7 @@
       "amount": 918.2,
       "day": 17,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     }
   ],
   "categories": [
@@ -907,7 +907,7 @@
     "2026-5": {
       "goal": 6000,
       "salary": 7152,
-      "otherIncome": 800,
+      "otherIncome": 760,
       "cardReimburse": 664.2,
       "loanReturn": 730
     }
@@ -921,5 +921,5 @@
     "2026-5": false,
     "2026-6": true
   },
-  "backupDate": "2026-06-07T23:05:00.780Z"
+  "backupDate": "2026-06-09T15:07:36.199Z"
 }
