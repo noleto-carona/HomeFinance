@@ -98,6 +98,24 @@
       "day": 10,
       "category": "Cartão de Crédito",
       "paid": false
+    },
+    {
+      "id": 1781018160362,
+      "monthKey": "2026-6",
+      "description": "PRESENTE HEMILLY 2/3",
+      "amount": 46,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1781018215226,
+      "monthKey": "2026-6",
+      "description": "Celular cartão mercado pago 3/6",
+      "amount": 450,
+      "day": 15,
+      "category": "Cartão de Crédito",
+      "paid": false
     }
   ],
   "categories": [
@@ -130,5 +148,5 @@
     "2026-3": false,
     "2026-4": true
   },
-  "backupDate": "2026-06-09T15:14:10.361Z"
+  "backupDate": "2026-06-09T15:18:12.959Z"
 }
