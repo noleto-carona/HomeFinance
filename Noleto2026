@@ -906,7 +906,7 @@
     },
     "2026-5": {
       "goal": 6000,
-      "salary": 7152,
+      "salary": 7032,
       "otherIncome": 760,
       "cardReimburse": 664.2,
       "loanReturn": 730
@@ -921,5 +921,5 @@
     "2026-5": false,
     "2026-6": true
   },
-  "backupDate": "2026-06-09T15:07:36.199Z"
+  "backupDate": "2026-06-09T15:20:00.250Z"
 }
