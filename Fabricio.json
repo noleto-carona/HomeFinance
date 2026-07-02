@@ -116,6 +116,24 @@
       "day": 15,
       "category": "Cartão de Crédito",
       "paid": false
+    },
+    {
+      "id": 1783006069493,
+      "monthKey": "2026-6",
+      "description": "CARTÃO CAIXA 7612",
+      "amount": 1426.79,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1783006119803,
+      "monthKey": "2026-6",
+      "description": "CARTÃO NU BANCK",
+      "amount": 172,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
     }
   ],
   "categories": [
@@ -148,5 +166,5 @@
     "2026-3": false,
     "2026-4": true
   },
-  "backupDate": "2026-06-09T15:18:12.959Z"
+  "backupDate": "2026-07-02T15:28:46.930Z"
 }
