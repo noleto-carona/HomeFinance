@@ -886,7 +886,7 @@
       "id": 1782843725987.4146,
       "monthKey": "2026-6",
       "description": "CARTÃO NU BANK ",
-      "amount": 645.29,
+      "amount": 804.32,
       "day": 10,
       "category": "Cartão de Crédito",
       "paid": false
@@ -975,7 +975,7 @@
     {
       "id": 1782843725987.3699,
       "monthKey": "2026-6",
-      "description": "CARTÃO MERCADO PAGO 3/6",
+      "description": "CARTÃO MERCADO PAGO4/6",
       "amount": 967.2,
       "day": 17,
       "category": "Cartão de Crédito",
@@ -1036,6 +1036,13 @@
       "otherIncome": 760,
       "cardReimburse": 664.2,
       "loanReturn": 730
+    },
+    "2026-6": {
+      "goal": 6000,
+      "salary": 0,
+      "otherIncome": 1550,
+      "cardReimburse": 685,
+      "loanReturn": 600
     }
   },
   "monthLocks": {
@@ -1047,5 +1054,5 @@
     "2026-5": true,
     "2026-6": false
   },
-  "backupDate": "2026-07-02T15:26:39.309Z"
+  "backupDate": "2026-07-06T13:16:39.551Z"
 }
