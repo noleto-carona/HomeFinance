@@ -862,7 +862,7 @@
       "amount": 73.08,
       "day": 7,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.0408,
@@ -871,7 +871,7 @@
       "amount": 1120,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.74,
@@ -889,7 +889,7 @@
       "amount": 804.32,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.6208,
@@ -907,7 +907,7 @@
       "amount": 1457.65,
       "day": 9,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.459,
@@ -916,7 +916,7 @@
       "amount": 134.16,
       "day": 12,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.2732,
@@ -934,7 +934,7 @@
       "amount": 50.43,
       "day": 13,
       "category": "Saúde",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.3862,
@@ -943,7 +943,7 @@
       "amount": 554,
       "day": 15,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.112,
@@ -952,7 +952,7 @@
       "amount": 100,
       "day": 10,
       "category": "INTERNET",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.9946,
@@ -961,7 +961,7 @@
       "amount": 653.08,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.8643,
@@ -970,7 +970,7 @@
       "amount": 2979.87,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.3699,
@@ -979,7 +979,25 @@
       "amount": 967.2,
       "day": 17,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
+    },
+    {
+      "id": 1783467689491,
+      "monthKey": "2026-6",
+      "description": "Balcão cozinha ",
+      "amount": 100,
+      "day": 4,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1783467722907,
+      "monthKey": "2026-6",
+      "description": "LICENCIAMENTO SIENA ",
+      "amount": 90.14,
+      "day": 7,
+      "category": "Transporte",
+      "paid": true
     }
   ],
   "categories": [
@@ -1054,5 +1072,5 @@
     "2026-5": true,
     "2026-6": false
   },
-  "backupDate": "2026-07-07T23:40:49.084Z"
+  "backupDate": "2026-07-08T00:39:47.641Z"
 }
