@@ -97,7 +97,7 @@
       "amount": 319.74,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1781018160362,
@@ -106,16 +106,16 @@
       "amount": 46,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1781018215226,
       "monthKey": "2026-6",
-      "description": "Celular cartão mercado pago 3/6",
+      "description": "Celular cartão MPAGO 3/6 NÃO PAGOU",
       "amount": 450,
       "day": 15,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1783006069493,
@@ -124,13 +124,40 @@
       "amount": 1426.79,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1783006119803,
       "monthKey": "2026-6",
       "description": "CARTÃO NU BANCK",
       "amount": 172,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1783471354654.4055,
+      "monthKey": "2026-7",
+      "description": "PRESENTE HEMILLY 3/3",
+      "amount": 46,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1783471354654.686,
+      "monthKey": "2026-7",
+      "description": "Celular cartão mercado pago 3/6",
+      "amount": 450,
+      "day": 15,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1783471354654.533,
+      "monthKey": "2026-7",
+      "description": "CARTÃO CAIXA 7612",
+      "amount": 0,
       "day": 10,
       "category": "Cartão de Crédito",
       "paid": false
@@ -167,11 +194,19 @@
       "otherIncome": 0,
       "cardReimburse": 0,
       "loanReturn": 0
+    },
+    "2026-7": {
+      "goal": 1400,
+      "salary": 0,
+      "otherIncome": 0,
+      "cardReimburse": 0,
+      "loanReturn": 0
     }
   },
   "monthLocks": {
     "2026-3": false,
-    "2026-4": true
+    "2026-4": true,
+    "2026-6": true
   },
-  "backupDate": "2026-07-02T22:41:10.821Z"
+  "backupDate": "2026-07-08T00:53:31.202Z"
 }
