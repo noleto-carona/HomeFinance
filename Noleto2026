@@ -880,7 +880,7 @@
       "amount": 36.84,
       "day": 9,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.4146,
@@ -898,7 +898,7 @@
       "amount": 319.14,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.4563,
@@ -925,7 +925,7 @@
       "amount": 16,
       "day": 12,
       "category": "Serviços",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1782843725987.2397,
@@ -1072,5 +1072,5 @@
     "2026-5": true,
     "2026-6": false
   },
-  "backupDate": "2026-07-08T00:39:47.641Z"
+  "backupDate": "2026-07-13T09:54:59.923Z"
 }
