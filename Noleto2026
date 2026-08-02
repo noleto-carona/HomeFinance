@@ -588,11 +588,551 @@
     {
       "id": 1776182501469,
       "monthKey": "2026-3",
-      "description": "CARTÃO MERCADO PAGO",
+      "description": "CARTÃO MERCADO PAGO 1/6",
       "amount": 918.2,
       "day": 17,
       "category": "Cartão de Crédito",
       "paid": true
+    },
+    {
+      "id": 1777642488480.7942,
+      "monthKey": "2026-4",
+      "description": "AGUA / DEB.AUT",
+      "amount": 99.08,
+      "day": 7,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.313,
+      "monthKey": "2026-4",
+      "description": "ALUGUEL",
+      "amount": 1120,
+      "day": 10,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.3137,
+      "monthKey": "2026-4",
+      "description": "CARTÃO CAIXA 4441",
+      "amount": 62.34,
+      "day": 8,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.2654,
+      "monthKey": "2026-4",
+      "description": "CARTÃO NU BANK FAFA PAGOU ",
+      "amount": 631.34,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.97,
+      "monthKey": "2026-4",
+      "description": "ENERGIA / DEB.AUTO",
+      "amount": 313.57,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1777642488480.1892,
+      "monthKey": "2026-4",
+      "description": "IPVA 5/5",
+      "amount": 106.1,
+      "day": 8,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.4304,
+      "monthKey": "2026-4",
+      "description": "CARTÃO CAIXA 0287",
+      "amount": 2605.94,
+      "day": 9,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.1128,
+      "monthKey": "2026-4",
+      "description": "CLARO / DEB.AUTO",
+      "amount": 134.16,
+      "day": 12,
+      "category": "TELEFONIA",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.2842,
+      "monthKey": "2026-4",
+      "description": "MANUTENÇÃO CX",
+      "amount": 16,
+      "day": 12,
+      "category": "Serviços",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.8958,
+      "monthKey": "2026-4",
+      "description": "SEGURO VIDA BB",
+      "amount": 47,
+      "day": 13,
+      "category": "Saúde",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.0608,
+      "monthKey": "2026-4",
+      "description": "BOLETO ITAU SIENA",
+      "amount": 554,
+      "day": 15,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.8079,
+      "monthKey": "2026-4",
+      "description": "INTERNET",
+      "amount": 100,
+      "day": 10,
+      "category": "INTERNET",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.199,
+      "monthKey": "2026-4",
+      "description": "CredFatto Murfato",
+      "amount": 261.2,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.7246,
+      "monthKey": "2026-4",
+      "description": "CARTÃO C6 BANK",
+      "amount": 1817.84,
+      "day": 10,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1777642488480.4414,
+      "monthKey": "2026-4",
+      "description": "CARTÃO MERCADO PAGO 2/6",
+      "amount": 918.2,
+      "day": 17,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1780237566812.0693,
+      "monthKey": "2026-5",
+      "description": "AGUA / DEB.AUT",
+      "amount": 99.51,
+      "day": 7,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1780237566812.2952,
+      "monthKey": "2026-5",
+      "description": "ALUGUEL",
+      "amount": 1120,
+      "day": 10,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1780237566812.2656,
+      "monthKey": "2026-5",
+      "description": "CARTÃO CAIXA 4441",
+      "amount": 58.84,
+      "day": 8,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1780237566812.8792,
+      "monthKey": "2026-5",
+      "description": "CARTÃO NU BANK ",
+      "amount": 344,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1780237566812.92,
+      "monthKey": "2026-5",
+      "description": "ENERGIA / DEB.AUTO",
+      "amount": 279.76,
+      "day": 10,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1780237566813.428,
+      "monthKey": "2026-5",
+      "description": "CARTÃO CAIXA 0287",
+      "amount": 1268.74,
+      "day": 9,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1780237566813.6296,
+      "monthKey": "2026-5",
+      "description": "CLARO / DEB.AUTO",
+      "amount": 134.16,
+      "day": 12,
+      "category": "TELEFONIA",
+      "paid": true
+    },
+    {
+      "id": 1780237566813.8726,
+      "monthKey": "2026-5",
+      "description": "MANUTENÇÃO CX",
+      "amount": 16,
+      "day": 12,
+      "category": "Serviços",
+      "paid": true
+    },
+    {
+      "id": 1780237566813.802,
+      "monthKey": "2026-5",
+      "description": "SEGURO VIDA BB",
+      "amount": 50.43,
+      "day": 13,
+      "category": "Saúde",
+      "paid": true
+    },
+    {
+      "id": 1780237566813.717,
+      "monthKey": "2026-5",
+      "description": "BOLETO ITAU SIENA",
+      "amount": 554,
+      "day": 15,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1780237566813.8037,
+      "monthKey": "2026-5",
+      "description": "INTERNET",
+      "amount": 100,
+      "day": 10,
+      "category": "INTERNET",
+      "paid": true
+    },
+    {
+      "id": 1780237566813.6626,
+      "monthKey": "2026-5",
+      "description": "CredFatto Murfato",
+      "amount": 1055.48,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1780237566813.7085,
+      "monthKey": "2026-5",
+      "description": "CARTÃO C6 BANK",
+      "amount": 2544.94,
+      "day": 10,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1780237566813.6213,
+      "monthKey": "2026-5",
+      "description": "CARTÃO MERCADO PAGO 3/6",
+      "amount": 918.2,
+      "day": 17,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.073,
+      "monthKey": "2026-6",
+      "description": "AGUA / DEB.AUT",
+      "amount": 73.08,
+      "day": 7,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.0408,
+      "monthKey": "2026-6",
+      "description": "ALUGUEL",
+      "amount": 1120,
+      "day": 10,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.74,
+      "monthKey": "2026-6",
+      "description": "CARTÃO CAIXA 4441",
+      "amount": 36.84,
+      "day": 9,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.4146,
+      "monthKey": "2026-6",
+      "description": "CARTÃO NU BANK ",
+      "amount": 804.32,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.6208,
+      "monthKey": "2026-6",
+      "description": "ENERGIA / DEB.AUTO",
+      "amount": 319.14,
+      "day": 10,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.4563,
+      "monthKey": "2026-6",
+      "description": "CARTÃO CAIXA 0287",
+      "amount": 1457.65,
+      "day": 9,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.459,
+      "monthKey": "2026-6",
+      "description": "CLARO / DEB.AUTO",
+      "amount": 134.16,
+      "day": 12,
+      "category": "TELEFONIA",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.2732,
+      "monthKey": "2026-6",
+      "description": "MANUTENÇÃO CX",
+      "amount": 16,
+      "day": 12,
+      "category": "Serviços",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.2397,
+      "monthKey": "2026-6",
+      "description": "SEGURO VIDA BB",
+      "amount": 50.43,
+      "day": 13,
+      "category": "Saúde",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.3862,
+      "monthKey": "2026-6",
+      "description": "BOLETO ITAU SIENA",
+      "amount": 554,
+      "day": 15,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.112,
+      "monthKey": "2026-6",
+      "description": "INTERNET",
+      "amount": 100,
+      "day": 10,
+      "category": "INTERNET",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.9946,
+      "monthKey": "2026-6",
+      "description": "CredFatto Murfato",
+      "amount": 653.08,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.8643,
+      "monthKey": "2026-6",
+      "description": "CARTÃO C6 BANK",
+      "amount": 2979.87,
+      "day": 10,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1782843725987.3699,
+      "monthKey": "2026-6",
+      "description": "CARTÃO MERCADO PAGO4/6",
+      "amount": 967.2,
+      "day": 17,
+      "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1783467689491,
+      "monthKey": "2026-6",
+      "description": "Balcão cozinha ",
+      "amount": 100,
+      "day": 4,
+      "category": "Moradia",
+      "paid": true
+    },
+    {
+      "id": 1783467722907,
+      "monthKey": "2026-6",
+      "description": "LICENCIAMENTO SIENA ",
+      "amount": 90.14,
+      "day": 7,
+      "category": "Transporte",
+      "paid": true
+    },
+    {
+      "id": 1785461124017.8833,
+      "monthKey": "2026-7",
+      "description": "AGUA / DEB.AUT",
+      "amount": 73.08,
+      "day": 7,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.5615,
+      "monthKey": "2026-7",
+      "description": "ALUGUEL",
+      "amount": 1120,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.4497,
+      "monthKey": "2026-7",
+      "description": "CARTÃO CAIXA 4441",
+      "amount": 101.74,
+      "day": 9,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.8052,
+      "monthKey": "2026-7",
+      "description": "CARTÃO NU BANK ",
+      "amount": 423.09,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.544,
+      "monthKey": "2026-7",
+      "description": "ENERGIA / DEB.AUTO",
+      "amount": 319.13,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.5142,
+      "monthKey": "2026-7",
+      "description": "CARTÃO CAIXA 0287",
+      "amount": 1702,
+      "day": 9,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.9275,
+      "monthKey": "2026-7",
+      "description": "CLARO / DEB.AUTO",
+      "amount": 134.16,
+      "day": 12,
+      "category": "TELEFONIA",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.138,
+      "monthKey": "2026-7",
+      "description": "MANUTENÇÃO CX",
+      "amount": 16,
+      "day": 12,
+      "category": "Serviços",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.1885,
+      "monthKey": "2026-7",
+      "description": "SEGURO VIDA BB",
+      "amount": 50.43,
+      "day": 13,
+      "category": "Saúde",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.1917,
+      "monthKey": "2026-7",
+      "description": "BOLETO ITAU SIENA",
+      "amount": 554,
+      "day": 15,
+      "category": "Transporte",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.7925,
+      "monthKey": "2026-7",
+      "description": "INTERNET",
+      "amount": 100,
+      "day": 10,
+      "category": "INTERNET",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.5442,
+      "monthKey": "2026-7",
+      "description": "CredFatto Murfato",
+      "amount": 873.29,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.599,
+      "monthKey": "2026-7",
+      "description": "CARTÃO C6 BANK",
+      "amount": 3681.88,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.7556,
+      "monthKey": "2026-7",
+      "description": "CARTÃO MERCADO PAGO4/6",
+      "amount": 967.2,
+      "day": 17,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1785461124017.0637,
+      "monthKey": "2026-7",
+      "description": "Balcão cozinha ",
+      "amount": 100,
+      "day": 4,
+      "category": "Moradia",
+      "paid": false
     }
   ],
   "categories": [
@@ -635,13 +1175,37 @@
       "otherIncome": 150,
       "cardReimburse": 450,
       "loanReturn": 55
+    },
+    "2026-4": {
+      "goal": 6000,
+      "salary": 6462,
+      "otherIncome": 0,
+      "cardReimburse": 1551.34,
+      "loanReturn": 500
+    },
+    "2026-5": {
+      "goal": 6000,
+      "salary": 7032,
+      "otherIncome": 760,
+      "cardReimburse": 664.2,
+      "loanReturn": 730
+    },
+    "2026-6": {
+      "goal": 6000,
+      "salary": 7348.44,
+      "otherIncome": 1550,
+      "cardReimburse": 685,
+      "loanReturn": 646
     }
   },
   "monthLocks": {
     "2026-0": true,
     "2026-1": true,
     "2026-2": true,
-    "2026-3": false
+    "2026-3": true,
+    "2026-4": false,
+    "2026-5": true,
+    "2026-6": true
   },
-  "backupDate": "2026-04-14T16:02:54.452Z"
+  "backupDate": "2026-08-02T12:56:54.968Z"
 }
