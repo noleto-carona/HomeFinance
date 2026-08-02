@@ -1046,10 +1046,12 @@ input:checked+.slider:before {
 
 .trend-chart {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 6px;
     align-items: end;
     min-height: 140px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .trend-item {
@@ -1057,6 +1059,7 @@ input:checked+.slider:before {
     flex-direction: column;
     align-items: center;
     gap: 6px;
+    min-width: 0;
 }
 
 .trend-bar {
@@ -1087,13 +1090,16 @@ input:checked+.slider:before {
 
 .trend-percent {
     position: static;
-    font-size: var(--font-xs);
+    font-size: clamp(0.55rem, 1.9vw, var(--font-xs));
     font-weight: 700;
     color: var(--text-secondary);
     margin-bottom: 6px;
     display: block;
     width: 100%;
     text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .trend-percent.negative {
@@ -1105,9 +1111,38 @@ input:checked+.slider:before {
 }
 
 .trend-label {
-    font-size: var(--font-xs);
+    font-size: clamp(0.55rem, 1.8vw, var(--font-xs));
     color: var(--text-secondary);
     font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .dashboard-section {
+        overflow: hidden;
+    }
+
+    .trend-chart {
+        gap: 4px;
+    }
+
+    .trend-item {
+        gap: 4px;
+    }
+
+    .trend-bar {
+        height: 96px;
+    }
+
+    .trend-percent {
+        margin-bottom: 2px;
+        font-size: 0.5rem;
+    }
+
+    .trend-label {
+        font-size: 0.6rem;
+    }
 }
 
 /* Accordion */
