@@ -43,6 +43,12 @@
                 <h1 id="current-month-display">Janeiro 2026</h1>
                 <button id="next-month" class="icon-btn"><i class="fas fa-chevron-right"></i></button>
             </div>
+            <div class="header-meta">
+                <span id="current-user-display" class="current-user-chip">
+                    <i class="fas fa-user" style="margin-right: 6px; font-size: 0.7rem; opacity: 0.7;"></i>
+                    Usuário: <span id="user-name-display">Não identificado</span>
+                </span>
+            </div>
 
             <!-- Cards de Resumo -->
             <div class="summary-cards">
@@ -194,6 +200,9 @@
                                 <div class="accordion-content hidden" id="accordion-profile-gen">
                                     <div style="background: #f0f9ff; padding: 10px; border-radius: 8px; margin-top: 5px;">
                                         <p style="font-size: 0.8rem; margin-bottom: 8px;">1. Preencha Token e Repo acima.<br>2. Defina uma senha abaixo.<br>3. Gere o código e envie para o administrador.</p>
+
+                                        <label style="font-size: 0.75rem; color: #64748b; display: block; margin-bottom: 4px;">Nome do Usuário</label>
+                                        <input type="text" id="new-profile-name" placeholder="Ex: João" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.85rem;">
                                         
                                         <label style="font-size: 0.75rem; color: #64748b; display: block; margin-bottom: 4px;">Nome do Arquivo de Dados (Opcional)</label>
                                         <input type="text" id="new-profile-filename" placeholder="Ex: dados_joao.json (Padrão: dados_financeiros.json)" style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.85rem;">

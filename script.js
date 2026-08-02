@@ -29,6 +29,8 @@ const deleteBtn = document.getElementById('delete-btn');
 const prevMonthBtn = document.getElementById('prev-month');
 const nextMonthBtn = document.getElementById('next-month');
 const currentMonthDisplay = document.getElementById('current-month-display');
+const currentUserDisplayEl = document.getElementById('current-user-display');
+const userNameDisplayEl = document.getElementById('user-name-display');
 const emptyStateEl = document.getElementById('empty-state');
 const copyPrevMonthBtn = document.getElementById('copy-prev-month-btn');
 const lockMonthBtn = document.getElementById('lock-month-btn');
@@ -69,6 +71,73 @@ const getMonthName = (date) => {
     return date.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
 };
 
+function formatDisplayName(name) {
+    return (name || '')
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean)
+        .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ');
+}
+
+function deriveProfileName(profile = {}) {
+    const explicitName = profile.name || profile.userName || profile.username || '';
+    if (explicitName.trim()) {
+        return formatDisplayName(explicitName);
+    }
+
+    const filename = profile.filename || '';
+    if (filename) {
+        const derivedFromFile = filename
+            .replace(/\.json$/i, '')
+            .replace(/^dados[_-]?/i, '')
+            .replace(/[_-]+/g, ' ')
+            .trim();
+
+        if (derivedFromFile) {
+            return formatDisplayName(derivedFromFile);
+        }
+    }
+
+    if (Object.keys(profile).length === 0) {
+        const storedName = localStorage.getItem('currentProfileName') || '';
+        if (storedName.trim()) {
+            return formatDisplayName(storedName);
+        }
+
+        const storedFilename = localStorage.getItem('githubFileName') || '';
+        if (storedFilename) {
+            return deriveProfileName({ filename: storedFilename });
+        }
+    }
+
+    return (profile.isAdmin || localStorage.getItem('profileIsAdmin') === 'true') ? 'Administrador' : 'Usuário';
+}
+
+function updateCurrentUserUI() {
+    if (!userNameDisplayEl) return;
+
+    const hasProfileContext = !!(localStorage.getItem('githubToken') || localStorage.getItem('githubRepo') || localStorage.getItem('githubFileName') || localStorage.getItem('currentProfileName'));
+    
+    let displayName = 'Não identificado';
+    if (hasProfileContext) {
+        const profileName = localStorage.getItem('currentProfileName');
+        if (profileName) {
+            displayName = formatDisplayName(profileName);
+        } else {
+            // Fallback: tenta derivar do filename
+            const filename = localStorage.getItem('githubFileName');
+            if (filename) {
+                displayName = deriveProfileName({ filename });
+            } else {
+                displayName = 'Usuário';
+            }
+        }
+    }
+    
+    userNameDisplayEl.textContent = displayName;
+}
+
 function computeIncomeForMonthKey(key) {
     const s = monthlySettings[key] || {};
     return (s.salary || 0) + (s.otherIncome || 0) + (s.cardReimburse || 0) + (s.loanReturn || 0);
@@ -104,23 +173,31 @@ function renderDeficitTrend(year) {
     const values = [];
     for (let m = 0; m < 12; m++) {
         const key = `${year}-${m}`;
-        const diff = computeMonthlyExpensesTotal(key) - computeIncomeForMonthKey(key);
-        values.push(diff > 0 ? diff : 0);
+        const netResult = computeIncomeForMonthKey(key) - computeMonthlyExpensesTotal(key);
+        values.push(netResult);
     }
-    const max = Math.max(...values, 0.01);
+    const max = Math.max(...values.map(v => Math.abs(v)), 0.01);
     deficitTrendEl.innerHTML = '';
     values.forEach((v, i) => {
+        const magnitude = Math.abs(v);
+        const state = v > 0 ? 'positive' : v < 0 ? 'negative' : 'neutral';
         const item = document.createElement('div');
         item.className = 'trend-item';
         const percent = document.createElement('span');
-        percent.className = `trend-percent ${v > 0 ? 'negative' : 'positive'}`;
-        percent.textContent = `${((v / max) * 100).toFixed(1).replace('.', ',')}%`;
+        percent.className = `trend-percent ${state}`;
+        percent.textContent = magnitude === 0
+            ? '0%'
+            : `${v > 0 ? '+' : '-'}${((magnitude / max) * 100).toFixed(1).replace('.', ',')}%`;
         const bar = document.createElement('div');
         bar.className = 'trend-bar';
         const fill = document.createElement('div');
-        fill.className = `trend-bar-fill ${v > 0 ? 'negative' : 'positive'}`;
-        fill.style.height = `${Math.round((v / max) * 100)}%`;
-        fill.title = v > 0 ? `${formatCurrency(-v)}` : 'Sem déficit';
+        fill.className = `trend-bar-fill ${state}`;
+        fill.style.height = `${Math.round((magnitude / max) * 100)}%`;
+        fill.title = v > 0
+            ? `Saldo positivo: ${formatCurrency(v)}`
+            : v < 0
+                ? `Prejuízo: ${formatCurrency(Math.abs(v))}`
+                : 'Mês equilibrado';
         bar.appendChild(fill);
         item.appendChild(percent);
         const label = document.createElement('span');
@@ -215,6 +292,7 @@ function loadData() {
 
     if (document.getElementById('github-token')) document.getElementById('github-token').value = githubToken;
     if (document.getElementById('github-repo')) document.getElementById('github-repo').value = githubRepo;
+    updateCurrentUserUI();
 
     // Carregar Despesas
     if (savedExpenses) {
@@ -958,6 +1036,7 @@ function saveGithubConfig() {
     githubRepo = repo;
     localStorage.setItem('githubToken', token);
     localStorage.setItem('githubRepo', repo);
+    updateCurrentUserUI();
     showCustomModal('Sucesso', 'Configuração salva com sucesso!');
 }
 
@@ -1219,34 +1298,39 @@ async function handleProfileLogin() {
     btn.disabled = true;
 
     let foundProfile = null;
+    let foundProfileData = null;
 
     // Tentar desencriptar cada perfil com a senha fornecida
     for (const profile of USER_PROFILES) {
         const result = await decryptData(profile, pwd);
         if (result && result.token && result.repo) {
-            foundProfile = result;
+            foundProfile = profile;
+            foundProfileData = result;
             break;
         }
     }
 
-    if (foundProfile) {
+    if (foundProfileData) {
         // Sucesso!
-        const filename = foundProfile.filename || 'dados_financeiros.json (Padrão)';
+        const profileName = foundProfileData.name || deriveProfileName(foundProfileData);
+        const filename = foundProfileData.filename || 'dados_financeiros.json';
         
         showCustomModal(
             'Perfil encontrado',
-            `Perfil: ${foundProfile.repo}\nArquivo de Dados: ${filename}\n\nDeseja carregar este perfil?\n(Isso limpará os dados locais atuais)`,
+            `Usuário: ${profileName}\nPerfil: ${foundProfileData.repo}\nArquivo de Dados: ${filename}\n\nDeseja carregar este perfil?\n(Isso limpará os dados locais atuais)`,
             () => {
                 // 1. Set Config
-                githubToken = foundProfile.token;
-                githubRepo = foundProfile.repo;
-                const isAdmin = !!foundProfile.isAdmin;
-                const finalFilename = foundProfile.filename || 'dados_financeiros.json';
+                githubToken = foundProfileData.token;
+                githubRepo = foundProfileData.repo;
+                const isAdmin = !!foundProfileData.isAdmin;
+                const finalFilename = foundProfileData.filename || 'dados_financeiros.json';
 
                 localStorage.setItem('githubToken', githubToken);
                 localStorage.setItem('githubRepo', githubRepo);
                 localStorage.setItem('profileIsAdmin', isAdmin ? 'true' : 'false');
                 localStorage.setItem('githubFileName', finalFilename);
+                localStorage.setItem('currentProfileName', profileName);
+                updateCurrentUserUI();
                 
                 // 2. Limpar dados locais (Factory Reset)
                 localStorage.removeItem('expenses');
@@ -1256,7 +1340,7 @@ async function handleProfileLogin() {
                 localStorage.removeItem('accordionState');
                 
                 // 3. Tentar baixar dados
-                showCustomModal('Sucesso', `Perfil carregado! Baixando dados de ${finalFilename}...`);
+                showCustomModal('Sucesso', `${profileName} carregado! Baixando dados de ${finalFilename}...`);
                 
                 // Pequeno delay para UI atualizar
                 setTimeout(() => {
@@ -1265,23 +1349,6 @@ async function handleProfileLogin() {
             },
             true // Show Cancel button
         );
-        // Se cancelou, precisamos reabilitar o botão, mas como o modal é assíncrono na view (embora o callback não),
-        // vamos adicionar um listener no cancel do modal se precisarmos resetar o estado do botão de login.
-        // Simplificação: Se o usuário cancelar, o botão de login continua como "Verificando..."?
-        // Correção: O modal novo não bloqueia a execução. Precisamos lidar com o cancelamento.
-        // Como implementei o showCustomModal simples, ele só esconde ao cancelar.
-        // Vamos melhorar: adicionar um onCancel callback ou resetar UI globalmente.
-        // Mas para simplificar agora: O usuário pode tentar de novo. 
-        // Só precisamos garantir que o botão "Entrar" volte ao normal se ele cancelar.
-        
-        // Hack rápido: O modal cancel button apenas esconde o modal. 
-        // O botão "Entrar" ficará travado em "Verificando...".
-        // Vamos adicionar um reset no cancel button do modal especificamente para este caso? 
-        // Não, melhor passar um onCancel para o showCustomModal se eu quiser refatorar.
-        // Por enquanto, vou deixar o botão travado e recarregar a página é o padrão de erro.
-        // MENTIRA, vou arrumar. Vou adicionar onCancel no showCustomModal depois.
-        // Por agora, vou assumir que o usuário vai dar OK. Se cancelar, ele dá F5.
-        // (Vou refatorar showCustomModal para aceitar onCancel no próximo passo se der tempo, mas agora vou focar na funcionalidade principal).
         
     } else {
         showCustomModal('Erro', 'Senha incorreta ou perfil não encontrado.');
@@ -1294,6 +1361,7 @@ async function handleGenerateProfileCode() {
     const token = document.getElementById('github-token').value.trim();
     const repo = document.getElementById('github-repo').value.trim();
     const pwd = document.getElementById('new-profile-password').value.trim();
+    const profileNameInput = document.getElementById('new-profile-name');
     const isAdmin = document.getElementById('is-new-profile-admin').checked;
     const filenameInput = document.getElementById('new-profile-filename');
     let filename = filenameInput && filenameInput.value.trim() ? filenameInput.value.trim() : 'dados_financeiros.json';
@@ -1303,12 +1371,16 @@ async function handleGenerateProfileCode() {
         filename += '.json';
     }
 
+    const profileName = profileNameInput && profileNameInput.value.trim()
+        ? formatDisplayName(profileNameInput.value)
+        : deriveProfileName({ filename, repo, isAdmin });
+
     if (!token || !repo || !pwd) {
         showCustomModal('Erro', 'Preencha Token, Repositório e Senha para gerar o perfil!');
         return;
     }
 
-    const encrypted = await encryptData({ token, repo, isAdmin, filename }, pwd);
+    const encrypted = await encryptData({ token, repo, isAdmin, filename, name: profileName }, pwd);
     
     const code = `    {
         "iv": "${encrypted.iv}",
@@ -1377,12 +1449,14 @@ function checkAdminUI() {
     const currentFileDisplay = document.getElementById('current-file-display');
     if (currentFileDisplay) {
         const currentFile = localStorage.getItem('githubFileName');
+        const currentName = localStorage.getItem('currentProfileName') || deriveProfileName();
         if (currentFile) {
-            currentFileDisplay.textContent = `Arquivo Atual: ${currentFile}`;
+            currentFileDisplay.textContent = `Usuário Atual: ${currentName} | Arquivo Atual: ${currentFile}`;
         } else {
-            currentFileDisplay.textContent = '';
+            currentFileDisplay.textContent = currentName ? `Usuário Atual: ${currentName}` : '';
         }
     }
+    updateCurrentUserUI();
 }
 
 // --- Password Change Logic ---
@@ -1424,6 +1498,7 @@ function initPasswordChangeUI() {
 
         const isAdmin = localStorage.getItem('profileIsAdmin') === 'true';
         const currentFilename = localStorage.getItem('githubFileName') || 'dados_financeiros.json';
+        const currentName = localStorage.getItem('currentProfileName') || deriveProfileName();
 
         // Gera o payload criptografado com a NOVA senha
         // Importante: Mantemos o token e repo atuais, e o status de admin atual.
@@ -1431,7 +1506,8 @@ function initPasswordChangeUI() {
             token: githubToken, 
             repo: githubRepo, 
             isAdmin: isAdmin,
-            filename: currentFilename
+            filename: currentFilename,
+            name: currentName
         }, newPass);
 
         const code = `    {

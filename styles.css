@@ -108,6 +108,42 @@ body {
     position: relative;
 }
 
+.header-meta {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+}
+
+.current-user-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    color: rgba(255, 255, 255, 0.96);
+    font-size: var(--font-xs);
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    gap: 6px;
+}
+
+.current-user-chip i {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.current-user-chip #user-name-display {
+    font-weight: 700;
+    color: #ffffff;
+}
+
 .header-top h1 {
     font-size: var(--font-base);
     font-weight: 700;
@@ -1088,6 +1124,10 @@ input:checked+.slider:before {
     background: var(--success-gradient);
 }
 
+.trend-bar-fill.neutral {
+    background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+}
+
 .trend-percent {
     position: static;
     font-size: clamp(0.55rem, 1.9vw, var(--font-xs));
@@ -1103,10 +1143,14 @@ input:checked+.slider:before {
 }
 
 .trend-percent.negative {
-    color: var(--text-secondary);
+    color: #dc2626;
 }
 
 .trend-percent.positive {
+    color: #059669;
+}
+
+.trend-percent.neutral {
     color: var(--text-secondary);
 }
 
@@ -1119,6 +1163,16 @@ input:checked+.slider:before {
 }
 
 @media (max-width: 480px) {
+    .current-user-chip {
+        width: 100%;
+        font-size: 0.68rem;
+        padding: 4px 10px;
+    }
+
+    .current-user-chip i {
+        font-size: 0.6rem;
+    }
+
     .dashboard-section {
         overflow: hidden;
     }
