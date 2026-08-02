@@ -1259,4 +1259,24 @@ input:checked+.slider:before {
         opacity: 1;
         transform: translateY(0);
     }
+    /* --- NOVO LAYOUT DO TOPO (IMAGEM 2) --- */
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between; /* Empurra a esquerda e a direita para as bordas */
+    align-items: center; /* Centraliza verticalmente */
+    padding-top: 8px; /* Ajuste pequeno de espaçamento */
+    margin-bottom: 12px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre a seta, o mês e a outra seta */
 }

@@ -36,18 +36,22 @@
             </button>
         </nav>
 
-        <!-- Header -->
         <header class="header">
             <div class="header-top">
-                <button id="prev-month" class="icon-btn"><i class="fas fa-chevron-left"></i></button>
-                <h1 id="current-month-display">Janeiro 2026</h1>
-                <button id="next-month" class="icon-btn"><i class="fas fa-chevron-right"></i></button>
-            </div>
-            <div class="header-meta">
-                <span id="current-user-display" class="current-user-chip">
-                    <i class="fas fa-user" style="margin-right: 6px; font-size: 0.7rem; opacity: 0.7;"></i>
-                    Usuário: <span id="user-name-display">Não identificado</span>
-                </span>
+                <!-- Lado Esquerdo: Usuário -->
+                <div class="header-left">
+                    <span id="current-user-display" class="current-user-chip">
+                        <i class="fas fa-user" style="margin-right: 6px; font-size: 0.7rem; opacity: 0.7;"></i>
+                        Usuário: <span id="user-name-display">Não identificado</span>
+                    </span>
+                </div>
+
+                <!-- Lado Direito: Controles do Mês -->
+                <div class="header-right">
+                    <button id="prev-month" class="icon-btn"><i class="fas fa-chevron-left"></i></button>
+                    <h1 id="current-month-display">Janeiro 2026</h1>
+                    <button id="next-month" class="icon-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
 
             <!-- Cards de Resumo -->
