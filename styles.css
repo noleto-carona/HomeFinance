@@ -1130,7 +1130,7 @@ input:checked+.slider:before {
 
 .trend-percent {
     position: static;
-    font-size: 7px;
+    font-size: 11px !important;
     font-weight: 700;
     color: var(--text-secondary);
     margin-bottom: 4px;
