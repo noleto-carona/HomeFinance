@@ -1015,7 +1015,7 @@
       "amount": 1120,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1785461124017.4497,
@@ -1198,5 +1198,5 @@
     "2026-5": true,
     "2026-6": true
   },
-  "backupDate": "2026-08-05T14:49:56.619Z"
+  "backupDate": "2026-08-05T14:55:21.583Z"
 }
