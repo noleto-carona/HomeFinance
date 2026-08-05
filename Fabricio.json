@@ -179,6 +179,51 @@
       "day": 10,
       "category": "Lazer",
       "paid": false
+    },
+    {
+      "id": 1785939979879.501,
+      "monthKey": "2026-8",
+      "description": "Celular cartão mercado pago 4/6",
+      "amount": 450,
+      "day": 15,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1785939979879.9287,
+      "monthKey": "2026-8",
+      "description": "CARTÃO CAIXA 7612",
+      "amount": 0,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1785939979879.0398,
+      "monthKey": "2026-8",
+      "description": "GOOGLE ONE NU BANK",
+      "amount": 4.5,
+      "day": 10,
+      "category": "Lazer",
+      "paid": false
+    },
+    {
+      "id": 1785939979879.8958,
+      "monthKey": "2026-8",
+      "description": "GOOGLE FREE FIRE",
+      "amount": 4.99,
+      "day": 10,
+      "category": "Lazer",
+      "paid": false
+    },
+    {
+      "id": 1785940109015,
+      "monthKey": "2026-8",
+      "description": "RESTANTE MÊS PASSADO",
+      "amount": 758,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
     }
   ],
   "categories": [
@@ -224,7 +269,8 @@
   "monthLocks": {
     "2026-3": false,
     "2026-4": true,
-    "2026-6": true
+    "2026-6": true,
+    "2026-7": true
   },
-  "backupDate": "2026-08-02T13:05:26.608Z"
+  "backupDate": "2026-08-05T14:29:28.415Z"
 }
