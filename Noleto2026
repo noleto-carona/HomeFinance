@@ -1187,6 +1187,13 @@
       "otherIncome": 1550,
       "cardReimburse": 685,
       "loanReturn": 646
+    },
+    "2026-7": {
+      "goal": 6000,
+      "salary": 9000,
+      "otherIncome": 1300,
+      "cardReimburse": 496,
+      "loanReturn": 0
     }
   },
   "monthLocks": {
@@ -1198,5 +1205,5 @@
     "2026-5": true,
     "2026-6": true
   },
-  "backupDate": "2026-08-31T14:11:24.689Z"
+  "backupDate": "2026-08-31T14:17:30.066Z"
 }
