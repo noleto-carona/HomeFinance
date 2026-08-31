@@ -1060,7 +1060,7 @@
       "amount": 134.16,
       "day": 12,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1785461124017.138,
@@ -1198,5 +1198,5 @@
     "2026-5": true,
     "2026-6": true
   },
-  "backupDate": "2026-08-10T17:36:40.833Z"
+  "backupDate": "2026-08-31T14:11:24.689Z"
 }
