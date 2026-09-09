@@ -1132,7 +1132,7 @@
       "amount": 73.08,
       "day": 7,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.607,
@@ -1141,7 +1141,7 @@
       "amount": 1120,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.778,
@@ -1150,7 +1150,7 @@
       "amount": 36.84,
       "day": 9,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.0173,
@@ -1159,13 +1159,13 @@
       "amount": 4.5,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.9856,
       "monthKey": "2026-8",
       "description": "ENERGIA / DEB.AUTO",
-      "amount": 302.59,
+      "amount": 343.07,
       "day": 10,
       "category": "Moradia",
       "paid": false
@@ -1326,7 +1326,7 @@
       "salary": 0,
       "otherIncome": 900,
       "cardReimburse": 496,
-      "loanReturn": 0
+      "loanReturn": 153
     }
   },
   "monthLocks": {
@@ -1339,5 +1339,5 @@
     "2026-6": true,
     "2026-7": true
   },
-  "backupDate": "2026-09-05T15:29:06.146Z"
+  "backupDate": "2026-09-09T13:23:19.728Z"
 }
