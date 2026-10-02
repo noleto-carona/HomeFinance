@@ -1168,16 +1168,16 @@
       "amount": 343.07,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.5713,
       "monthKey": "2026-8",
       "description": "CARTÃO CAIXA 0287",
       "amount": 849.09,
-      "day": 9,
+      "day": 11,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.604,
@@ -1186,7 +1186,7 @@
       "amount": 140,
       "day": 12,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.9592,
@@ -1195,7 +1195,7 @@
       "amount": 16,
       "day": 12,
       "category": "Serviços",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.7815,
@@ -1204,7 +1204,7 @@
       "amount": 50.43,
       "day": 13,
       "category": "Saúde",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.9275,
@@ -1213,7 +1213,7 @@
       "amount": 554,
       "day": 15,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.5962,
@@ -1222,7 +1222,7 @@
       "amount": 100,
       "day": 10,
       "category": "INTERNET",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.2236,
@@ -1231,7 +1231,7 @@
       "amount": 979.65,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.3022,
@@ -1240,7 +1240,7 @@
       "amount": 3166.88,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1788539034065.9382,
@@ -1249,6 +1249,150 @@
       "amount": 468.2,
       "day": 17,
       "category": "Cartão de Crédito",
+      "paid": true
+    },
+    {
+      "id": 1788982691372,
+      "monthKey": "2026-8",
+      "description": "RÉGIS NUBANK EMPRÉSTIMO ",
+      "amount": 0.1,
+      "day": 12,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1790908964171.656,
+      "monthKey": "2026-9",
+      "description": "AGUA / DEB.AUT",
+      "amount": 111.04,
+      "day": 7,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.9958,
+      "monthKey": "2026-9",
+      "description": "ALUGUEL",
+      "amount": 1120,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.3462,
+      "monthKey": "2026-9",
+      "description": "CARTÃO CAIXA 4441",
+      "amount": 83.23,
+      "day": 9,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.7148,
+      "monthKey": "2026-9",
+      "description": "CARTÃO NU BANK FREE FIRE",
+      "amount": 23.55,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.2993,
+      "monthKey": "2026-9",
+      "description": "ENERGIA / DEB.AUTO",
+      "amount": 281.71,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.0813,
+      "monthKey": "2026-9",
+      "description": "CARTÃO CAIXA 0287",
+      "amount": 893.26,
+      "day": 11,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.419,
+      "monthKey": "2026-9",
+      "description": "CLARO / DEB.AUTO",
+      "amount": 140,
+      "day": 12,
+      "category": "TELEFONIA",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.4348,
+      "monthKey": "2026-9",
+      "description": "MANUTENÇÃO CX",
+      "amount": 16,
+      "day": 12,
+      "category": "Serviços",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.3071,
+      "monthKey": "2026-9",
+      "description": "SEGURO VIDA BB",
+      "amount": 50.43,
+      "day": 13,
+      "category": "Saúde",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.859,
+      "monthKey": "2026-9",
+      "description": "BOLETO ITAU SIENA",
+      "amount": 554,
+      "day": 15,
+      "category": "Transporte",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.0986,
+      "monthKey": "2026-9",
+      "description": "INTERNET",
+      "amount": 100,
+      "day": 10,
+      "category": "INTERNET",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.9473,
+      "monthKey": "2026-9",
+      "description": "CredFatto Murfato",
+      "amount": 1270.34,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.156,
+      "monthKey": "2026-9",
+      "description": "CARTÃO C6 BANK",
+      "amount": 3166.88,
+      "day": 10,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1790908964172.3154,
+      "monthKey": "2026-9",
+      "description": "RÉGIS NUBANK EMPRÉSTIMO",
+      "amount": 0,
+      "day": 12,
+      "category": "Moradia",
+      "paid": false
+    },
+    {
+      "id": 1790909100027,
+      "monthKey": "2026-9",
+      "description": "Celular paí 2/5",
+      "amount": 53,
+      "day": 5,
+      "category": "Moradia",
       "paid": false
     }
   ],
@@ -1339,5 +1483,5 @@
     "2026-6": true,
     "2026-7": true
   },
-  "backupDate": "2026-09-09T13:23:19.728Z"
+  "backupDate": "2026-10-02T02:50:12.414Z"
 }
