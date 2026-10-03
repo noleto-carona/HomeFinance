@@ -242,6 +242,15 @@
       "day": 10,
       "category": "Outros",
       "paid": false
+    },
+    {
+      "id": 1790992367607,
+      "monthKey": "2026-9",
+      "description": "PARCELAMENTO 1/6",
+      "amount": 126,
+      "day": 3,
+      "category": "Outros",
+      "paid": false
     }
   ],
   "categories": [
@@ -304,5 +313,5 @@
     "2026-6": true,
     "2026-7": true
   },
-  "backupDate": "2026-10-02T15:49:38.855Z"
+  "backupDate": "2026-10-03T01:53:02.842Z"
 }
