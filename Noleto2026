@@ -1309,7 +1309,7 @@
       "id": 1790908964172.0813,
       "monthKey": "2026-9",
       "description": "CARTÃO CAIXA 0287",
-      "amount": 685,
+      "amount": 685.2,
       "day": 11,
       "category": "Cartão de Crédito",
       "paid": false
@@ -1387,12 +1387,12 @@
       "paid": false
     },
     {
-      "id": 1790909100027,
+      "id": 1791286919815,
       "monthKey": "2026-9",
-      "description": "Celular paí 2/5",
-      "amount": 53,
-      "day": 5,
-      "category": "Moradia",
+      "description": "Celular pai 2/5",
+      "amount": 43,
+      "day": 10,
+      "category": "TELEFONIA",
       "paid": false
     }
   ],
@@ -1476,7 +1476,7 @@
       "goal": 6000,
       "salary": 0,
       "otherIncome": 1170,
-      "cardReimburse": 399,
+      "cardReimburse": 313.86,
       "loanReturn": 150
     }
   },
@@ -1490,5 +1490,5 @@
     "2026-6": true,
     "2026-7": true
   },
-  "backupDate": "2026-10-03T01:55:48.983Z"
+  "backupDate": "2026-10-06T11:49:28.906Z"
 }
