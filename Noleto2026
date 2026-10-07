@@ -1339,7 +1339,7 @@
       "amount": 50.43,
       "day": 13,
       "category": "Saúde",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1790908964172.859,
@@ -1476,7 +1476,7 @@
       "goal": 6000,
       "salary": 7873.57,
       "otherIncome": 1170,
-      "cardReimburse": 313.86,
+      "cardReimburse": 315,
       "loanReturn": 150
     }
   },
@@ -1490,5 +1490,5 @@
     "2026-6": true,
     "2026-7": true
   },
-  "backupDate": "2026-10-07T22:20:55.547Z"
+  "backupDate": "2026-10-07T22:31:37.157Z"
 }
