@@ -1267,7 +1267,7 @@
       "amount": 111.04,
       "day": 7,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1790908964172.9958,
@@ -1276,7 +1276,7 @@
       "amount": 1120,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1790908964172.3462,
@@ -1294,7 +1294,7 @@
       "amount": 23.55,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1790908964172.2993,
@@ -1312,7 +1312,7 @@
       "amount": 685.2,
       "day": 11,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1790908964172.419,
@@ -1321,7 +1321,7 @@
       "amount": 140,
       "day": 12,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1790908964172.4348,
@@ -1348,7 +1348,7 @@
       "amount": 554,
       "day": 15,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1790908964172.0986,
@@ -1357,7 +1357,7 @@
       "amount": 100,
       "day": 10,
       "category": "INTERNET",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1790908964172.9473,
@@ -1366,7 +1366,7 @@
       "amount": 1270.34,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1790908964172.156,
@@ -1375,7 +1375,7 @@
       "amount": 3578.82,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1790908964172.3154,
@@ -1393,7 +1393,7 @@
       "amount": 43,
       "day": 10,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     }
   ],
   "categories": [
@@ -1474,7 +1474,7 @@
     },
     "2026-9": {
       "goal": 6000,
-      "salary": 0,
+      "salary": 7873.57,
       "otherIncome": 1170,
       "cardReimburse": 313.86,
       "loanReturn": 150
@@ -1490,5 +1490,5 @@
     "2026-6": true,
     "2026-7": true
   },
-  "backupDate": "2026-10-06T11:49:28.906Z"
+  "backupDate": "2026-10-07T22:20:55.547Z"
 }
