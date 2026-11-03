@@ -1399,7 +1399,7 @@
       "id": 1793451906592.167,
       "monthKey": "2026-10",
       "description": "AGUA / DEB.AUT",
-      "amount": 92,
+      "amount": 78.29,
       "day": 7,
       "category": "Moradia",
       "paid": false
@@ -1423,19 +1423,10 @@
       "paid": false
     },
     {
-      "id": 1793451906592.5437,
-      "monthKey": "2026-10",
-      "description": "CARTÃO NU BANK FREE FIRE",
-      "amount": 23.55,
-      "day": 10,
-      "category": "Cartão de Crédito",
-      "paid": false
-    },
-    {
       "id": 1793451906592.0518,
       "monthKey": "2026-10",
       "description": "ENERGIA / DEB.AUTO",
-      "amount": 281.71,
+      "amount": 281.09,
       "day": 10,
       "category": "Moradia",
       "paid": false
@@ -1525,9 +1516,27 @@
       "id": 1793451906593.0369,
       "monthKey": "2026-10",
       "description": "Celular pai 5/5",
-      "amount": 43,
+      "amount": 66,
       "day": 10,
       "category": "TELEFONIA",
+      "paid": false
+    },
+    {
+      "id": 1793660161424,
+      "monthKey": "2026-10",
+      "description": "Muaythay Hevellyn ",
+      "amount": 200,
+      "day": 10,
+      "category": "Outros",
+      "paid": false
+    },
+    {
+      "id": 1793662558566,
+      "monthKey": "2026-10",
+      "description": "PRESENTE HEVELLYN 1/3",
+      "amount": 88,
+      "day": 10,
+      "category": "Moradia",
       "paid": false
     }
   ],
@@ -1618,7 +1627,7 @@
       "goal": 6000,
       "salary": 7800,
       "otherIncome": 800,
-      "cardReimburse": 300,
+      "cardReimburse": 460,
       "loanReturn": 150
     }
   },
@@ -1633,5 +1642,5 @@
     "2026-7": true,
     "2026-9": true
   },
-  "backupDate": "2026-10-31T13:11:33.453Z"
+  "backupDate": "2026-11-03T13:05:21.689Z"
 }
