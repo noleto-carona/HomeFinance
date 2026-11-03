@@ -251,6 +251,42 @@
       "day": 3,
       "category": "Outros",
       "paid": false
+    },
+    {
+      "id": 1793711158397.946,
+      "monthKey": "2026-10",
+      "description": "C6 BANK ",
+      "amount": 883,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1793711158397.6382,
+      "monthKey": "2026-10",
+      "description": "CARTÃO NU BANK GOOGLE ONE",
+      "amount": 4.5,
+      "day": 10,
+      "category": "Cartão de Crédito",
+      "paid": false
+    },
+    {
+      "id": 1793711158397.3677,
+      "monthKey": "2026-10",
+      "description": "PERFUME 03/08 CARTÃO CAIXA",
+      "amount": 101.85,
+      "day": 10,
+      "category": "Outros",
+      "paid": false
+    },
+    {
+      "id": 1793711158397.877,
+      "monthKey": "2026-10",
+      "description": "PARCELAMENTO 2/6",
+      "amount": 126,
+      "day": 3,
+      "category": "Outros",
+      "paid": false
     }
   ],
   "categories": [
@@ -313,5 +349,5 @@
     "2026-6": true,
     "2026-7": true
   },
-  "backupDate": "2026-10-03T01:53:02.842Z"
+  "backupDate": "2026-11-03T13:14:02.420Z"
 }
