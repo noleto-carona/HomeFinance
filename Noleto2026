@@ -1438,7 +1438,7 @@
       "amount": 856.88,
       "day": 11,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1793451906592.1487,
@@ -1447,7 +1447,7 @@
       "amount": 140,
       "day": 12,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1793451906592.2363,
@@ -1465,7 +1465,7 @@
       "amount": 50.43,
       "day": 13,
       "category": "Saúde",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1793451906593.5488,
@@ -1483,16 +1483,16 @@
       "amount": 100,
       "day": 10,
       "category": "INTERNET",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1793451906593.3357,
       "monthKey": "2026-10",
       "description": "CredFatto Murfato",
-      "amount": 1647.27,
+      "amount": 1656.26,
       "day": 10,
       "category": "Cartão de Crédito",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1793451906593.8362,
@@ -1501,7 +1501,7 @@
       "amount": 4261.44,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1793451906593.7874,
@@ -1519,7 +1519,7 @@
       "amount": 66,
       "day": 10,
       "category": "TELEFONIA",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1793660161424,
@@ -1625,9 +1625,9 @@
     },
     "2026-10": {
       "goal": 6000,
-      "salary": 7800,
-      "otherIncome": 1165,
-      "cardReimburse": 460,
+      "salary": 8600,
+      "otherIncome": 0,
+      "cardReimburse": 300,
       "loanReturn": 150
     }
   },
@@ -1642,5 +1642,5 @@
     "2026-7": true,
     "2026-9": true
   },
-  "backupDate": "2026-11-03T13:37:23.470Z"
+  "backupDate": "2026-11-07T03:50:20.051Z"
 }
