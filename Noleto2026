@@ -1411,7 +1411,7 @@
       "amount": 1120,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1793451906592.1704,
@@ -1474,7 +1474,7 @@
       "amount": 554,
       "day": 15,
       "category": "Transporte",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1793451906593.3716,
@@ -1528,7 +1528,7 @@
       "amount": 200,
       "day": 10,
       "category": "Outros",
-      "paid": false
+      "paid": true
     },
     {
       "id": 1793662558566,
@@ -1537,7 +1537,7 @@
       "amount": 88,
       "day": 10,
       "category": "Moradia",
-      "paid": false
+      "paid": true
     }
   ],
   "categories": [
@@ -1626,8 +1626,8 @@
     "2026-10": {
       "goal": 6000,
       "salary": 8600,
-      "otherIncome": 0,
-      "cardReimburse": 300,
+      "otherIncome": 1165,
+      "cardReimburse": 800,
       "loanReturn": 150
     }
   },
@@ -1642,5 +1642,5 @@
     "2026-7": true,
     "2026-9": true
   },
-  "backupDate": "2026-11-07T03:50:20.051Z"
+  "backupDate": "2026-11-09T00:50:22.061Z"
 }
